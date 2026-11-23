@@ -1,0 +1,1451 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f1e8">
+<title>Бумажный аэродром · Каталог самолётиков</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' rx='4' fill='%23a83322'/%3E%3Cpath d='M4 12 26 5 18 25 13 17 4 12Zm9 5L26 5' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&amp;display=swap">
+<style>
+:root{color-scheme:light;--paper:#f5f1e8;--white:#fffdf7;--ink:#1c2e3f;--muted:#4c5c68;--line:#d4cec0;--red:#a83322;--navy:#152d44;--grid:#d9e1e5;--mono:ui-monospace,Consolas,monospace;--sans:'Golos Text',system-ui,sans-serif;--xs:.78rem;--sm:.9rem;--base:1rem;--lg:1.24rem;--xl:clamp(2rem,5vw,3.65rem);--s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;--s8:2rem;--s10:2.5rem;--s12:3rem}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:var(--base)/1.55 var(--sans)}button,input,select{font:inherit;color:inherit}button,a,input,select{outline-offset:4px}button{cursor:pointer}button:disabled{cursor:default;opacity:.55}a{color:var(--red);text-underline-offset:.2em}h1,h2,h3,p,figure{margin:0}svg,canvas{display:block;max-width:100%}[hidden]{display:none!important}
+.wrap{width:min(1192px,calc(100% - 2 * var(--s6)));margin-inline:auto}.mast{border-bottom:1px solid var(--line)}.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:66px}.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;color:var(--ink);font-weight:850}.brand svg{width:33px;height:33px;padding:var(--s1);background:var(--red);color:white}.mast nav{display:flex;gap:var(--s6)}.mast nav a{color:var(--ink);font-size:var(--sm);text-decoration:none}.mast nav a:hover{text-decoration:underline}
+.hero{display:grid;grid-template-columns:1.06fr 1fr;border:1px solid var(--line);margin-block:var(--s8);background:var(--white)}.intro{padding:clamp(var(--s6),5vw,var(--s12));align-self:center}.kicker,.mono{font:700 var(--xs)/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}.kicker{color:var(--red);display:flex;align-items:center;gap:var(--s2)}.kicker:before{content:"";width:20px;height:2px;background:currentColor}.intro h1{font-size:var(--xl);line-height:1.02;letter-spacing:-.055em;margin-block:var(--s4)}.intro p{color:var(--muted);max-width:41ch}.actions{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center;margin-top:var(--s6)}.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:44px;padding:var(--s2) var(--s4);border:1px solid var(--red);background:var(--red);color:white;font-weight:750;text-decoration:none;font-size:var(--sm);border-radius:3px}.primary:hover{background:#842717}.secondary{background:transparent;color:var(--ink);border-color:var(--line)}.secondary:hover{background:#ece7dc}.mini-btn{min-height:36px;padding:var(--s1) var(--s3);font-size:var(--xs)}
+.plan{position:relative;display:grid;place-items:center;min-height:280px;overflow:hidden;background-color:var(--navy);background-image:linear-gradient(#ffffff15 1px,transparent 1px),linear-gradient(90deg,#ffffff15 1px,transparent 1px);background-size:24px 24px;color:#ecf2f7}.plan svg{width:min(88%,500px);height:auto}.plan figcaption{position:absolute;bottom:var(--s4);right:var(--s4);font:var(--xs)/1.4 var(--mono);letter-spacing:.1em}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s4);border-bottom:1px solid var(--line);padding-bottom:var(--s3)}h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;letter-spacing:-.035em}.section-head h2{margin-top:var(--s1)}.section-head p{color:var(--muted);text-align:right}.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s3);margin-bottom:var(--s3)}.filters label{display:grid;gap:var(--s1);color:var(--muted);font-size:var(--xs);font-weight:720;min-width:0}.filters input,.filters select{width:100%;min-height:44px;background:var(--white);border:1px solid var(--line);border-radius:3px;padding:var(--s2) var(--s3);color:var(--ink);font-size:var(--sm)}.tools{display:flex;flex-wrap:wrap;gap:var(--s4);justify-content:space-between;align-items:center;margin-bottom:var(--s4);color:var(--muted);font-size:var(--sm)}.tools>div{display:flex;gap:var(--s4);flex-wrap:wrap}.check{display:flex;align-items:center;gap:var(--s2);min-height:32px}.check input{width:17px;height:17px;accent-color:var(--red)}.bare{padding:var(--s1) var(--s2);border:none;background:none;text-decoration:underline;text-underline-offset:.2em;color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}.card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:4px;overflow:hidden}.card:hover{border-color:#a6a19a}.art{position:relative;min-height:122px;display:grid;place-items:center;color:#36516a;background-color:#e7eef1;background-image:linear-gradient(#98aeb83b 1px,transparent 1px),linear-gradient(90deg,#98aeb83b 1px,transparent 1px);background-size:18px 18px}.art svg{height:105px;width:172px}.art .serial{position:absolute;top:var(--s3);left:var(--s3);font:700 var(--xs)/1.2 var(--mono);color:#385267}.art .mark{position:absolute;right:var(--s3);top:var(--s3);background:var(--white);color:var(--red);padding:var(--s1) var(--s2);font-size:var(--xs);font-weight:750;border:1px solid #c8cfd0;border-radius:3px}
+.card-body{display:flex;flex-direction:column;flex:1;padding:var(--s4)}.card h3{font-size:var(--lg);line-height:1.15;overflow-wrap:anywhere}.en{color:var(--muted);min-height:1.4em;font-size:var(--sm);margin-top:var(--s1)}.type{font-size:var(--sm);color:var(--muted);margin-top:var(--s2)}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-block:var(--s2);margin-block:var(--s3);border-block:1px solid var(--line);gap:var(--s2)}.metric-grid div{display:flex;flex-direction:column;gap:var(--s1)}.metric-grid span{color:var(--muted);font-size:var(--xs)}.metric-grid b{font-size:var(--sm);font-variant-numeric:tabular-nums}.open{margin-top:auto;display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:0;padding:var(--s2) 0 0;color:var(--red);font-size:var(--sm);font-weight:780;text-align:left}.open:hover{text-decoration:underline}.more{display:flex;justify-content:center;margin-block:var(--s6)}.empty{grid-column:1/-1;padding:var(--s8);border:1px dashed var(--line);text-align:center;color:var(--muted)}.about{margin-block:var(--s10);padding:var(--s6);border:1px solid var(--line);background:var(--white)}.about h2{margin-bottom:var(--s3)}.about p+p{margin-top:var(--s2)}.footer{padding-block:var(--s5);border-top:1px solid var(--line);color:var(--muted);font-size:var(--sm)}
+dialog{width:min(760px,calc(100% - 2 * var(--s3)));max-height:calc(100dvh - 2 * var(--s3));padding:0;border:1px solid var(--line);border-radius:5px;background:var(--white);color:var(--ink)}dialog::backdrop{background:#152d44ba}body:has(dialog[open]){overflow:hidden}.modal-head{position:sticky;top:0;background:var(--white);z-index:2;display:flex;justify-content:space-between;align-items:start;gap:var(--s4);padding:var(--s3) var(--s6);border-bottom:1px solid var(--line)}.modal-head h2{margin-block:2px}.modal-head .secondary{min-width:44px;font-size:var(--lg);padding:var(--s1)}.modal-body{padding:var(--s4) var(--s6)}.modal-body .metric-grid{margin-block:var(--s2)}.modal-meta{font-size:var(--sm);color:var(--muted)}.tabs{display:flex;gap:var(--s2);border-bottom:1px solid var(--line);margin-block:var(--s2) var(--s3)}.tabs button{border:0;border-bottom:3px solid transparent;background:none;padding:var(--s2) var(--s3);min-height:42px;font-size:var(--sm);font-weight:780}.tabs [aria-pressed=true]{border-color:var(--red);color:var(--red)}
+.diagram{display:grid;place-items:center;background:#e9eff1;border:1px solid #cad5dc;border-radius:4px;overflow:hidden}.step-figure{padding:0;height:clamp(170px,28dvh,255px)}.step-figure canvas{width:100%;height:100%;max-height:100%;min-height:0;min-width:0;object-fit:contain}.step-copy{margin-block:var(--s2)}.step-copy h3{font-size:var(--lg);margin-bottom:2px}.step-copy p,.modal-body .hint{color:var(--muted)}.modal-body .hint{font-size:var(--xs);margin-top:var(--s2)}.step-nav{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);margin-bottom:var(--s2)}.step-nav .secondary{white-space:nowrap}.step-jump{max-width:100%;min-height:39px;background:var(--white);border:1px solid var(--line);border-radius:3px;padding:var(--s1) var(--s2);font:700 var(--xs)/1.4 var(--mono)}.step-links{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center;margin-top:var(--s2);font-size:var(--sm)}
+.anim-stage{border:1px solid #b8c6d1;border-radius:4px;overflow:hidden;background:var(--white)}.anim-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding:var(--s2) var(--s3);background:var(--navy);color:#f4f7fa;font:700 var(--xs)/1.3 var(--mono)}.anim-top .badge{color:#f29d7e;white-space:nowrap}.anim-bar{height:3px;background:#26445f}.anim-bar>div{height:100%;width:0%;background:var(--red);transition:width 60ms linear}.anim-view{background:#e9eff1;display:grid;place-items:center;overflow:hidden;height:clamp(160px,26dvh,235px)}.anim-view canvas{width:100%;height:100%;max-height:100%;min-height:0;min-width:0;object-fit:contain}.anim-caption{position:relative;z-index:1;padding:var(--s2) var(--s4);border-top:1px solid var(--line);background:var(--white);min-height:4rem}.anim-caption h3{font-size:1.03rem;margin-bottom:2px}.anim-caption p{color:var(--muted);font-size:var(--sm)}
+.anim-controls{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2);padding:var(--s2) var(--s3);border-top:1px solid var(--line);background:#f8f5ec}.anim-scrub{flex:1 1 150px;min-width:110px;accent-color:var(--red);cursor:pointer}.anim-speed{min-height:36px;background:var(--white);border:1px solid var(--line);border-radius:3px;padding:var(--s1) var(--s2);font:700 var(--xs)/1.2 var(--mono)}
+.lesson-video,.video-footage{width:100%;aspect-ratio:16/9;background:var(--navy);border:1px solid var(--line);display:block;margin-block:var(--s2)}.offline-box{margin-top:var(--s3);border:1px solid var(--line);border-radius:4px;padding:var(--s2) var(--s3);font-size:var(--sm);background:#faf7ef}.offline-box summary{cursor:pointer;font-weight:750}.test-box{margin-top:var(--s3);font-size:var(--sm);border:1px solid var(--line);padding:var(--s2) var(--s3);border-radius:4px}.test-box summary{cursor:pointer;font-weight:750}.test-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s3);row-gap:var(--s2);margin-top:var(--s2)}.test-form label{display:grid;gap:var(--s1)}.test-form input{width:100%;min-height:40px;border:1px solid var(--line);border-radius:3px;background:white;padding:var(--s1) var(--s2)}.test-form output,.test-form p{grid-column:1/-1}.test-form output{font-weight:750}.source-note{color:var(--muted);font-size:var(--sm);margin-top:var(--s4);border-top:1px solid var(--line);padding-top:var(--s3)}
+@media(max-width:820px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.plan{min-height:240px}}
+@media(max-width:560px){.wrap{width:calc(100% - 2 * var(--s4))}.mast nav{gap:var(--s3)}.mast nav a:first-child{display:none}.hero{grid-template-columns:1fr;margin-block:var(--s5)}.plan{min-height:170px}.plan svg{width:min(68%,265px)}.plan figcaption{font-size:var(--xs);bottom:var(--s2);right:var(--s2)}.cards{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column;gap:var(--s2)}.section-head p{text-align:left}.modal-head,.modal-body{padding:var(--s4)}.step-figure{height:clamp(175px,29dvh,235px)}.anim-view{height:clamp(170px,28dvh,225px)}.test-form{grid-template-columns:1fr}}
+@media(max-width:420px){.step-nav .secondary{padding-inline:var(--s2)}.step-jump{max-width:40vw}.step-nav{gap:var(--s1)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="mast" id="top"><div class="wrap">
+<a class="brand" href="#top"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M3 12 27 4 18 26 13 17 3 12Zm10 5L27 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Бумажный аэродром</a>
+<nav aria-label="Разделы"><a href="#catalog">Каталог</a><a href="#method">Как читать данные</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="hero-title"><div class="intro">
+<div class="kicker">Полевой справочник · выпуск 02</div>
+<h1 id="hero-title">Бумажные<br>самолётики</h1>
+<p>От первого «Дротика» до рекордной «Сюзанны». Выбирай модель по сложности и дальности, складывай по чётким пошаговым чертежам и смотри 3D-анимацию сгибания деталей.</p>
+<div class="actions"><a class="primary" href="#catalog">Открыть каталог <span aria-hidden="true">↓</span></a><button class="secondary" type="button" id="starter">Сложить «Дротик»</button></div>
+</div><figure class="plan">
+<svg viewBox="0 0 450 267" aria-hidden="true">
+<g fill="none" stroke="#a8becd" stroke-dasharray="4 6"><path d="M16 119h417M218 16v237M29 187Q69 151 159 165T422 140"/><circle cx="218" cy="125" r="94"/></g>
+<g transform="translate(5 -4)" stroke="#e7eff4" stroke-width="2" stroke-linejoin="round"><path d="M57 156 385 48 262 229 203 164Z" fill="#c7d8df"/><path d="m57 156 328-108-182 116Z" fill="#f7f6e9"/><path d="m203 164 182-116-129 103-31 49Z" fill="#648598"/><path d="m225 200 31-49 6 78Z" fill="#a8c0cc"/></g>
+<g fill="none" stroke="#e99776" stroke-width="1.5"><path d="m75 195 112 27m96-2 105-109m-109 102 4 7 8-1m90-109 7 1v8"/><circle cx="391" cy="44" r="6"/></g>
+</svg><figcaption>СХЕМА / КЛАССИЧЕСКИЙ ДРОТИК</figcaption></figure></section>
+<section id="catalog" aria-labelledby="catalog-title">
+<div class="section-head"><div><div class="kicker">Ангар</div><h2 id="catalog-title">Каталог моделей</h2></div><p id="count" role="status"></p></div>
+<div class="filters">
+<label for="query">Поиск модели<input id="query" type="search" placeholder="Например, дротик или glider"></label>
+<label for="difficulty">Сложность<select id="difficulty"><option value="">Все уровни</option><option value="0">Легко</option><option value="1">Средне</option><option value="2">Сложно</option><option value="3">Эксперт</option></select></label>
+<label for="type">Назначение<select id="type"><option value="">Любое</option><option value="distance">Дальность</option><option value="duration">Планирование</option><option value="acrobatics">Трюки</option><option value="decorative">Декоративные</option></select></label>
+<label for="sort">Порядок<select id="sort"><option value="featured">Рекомендуемые</option><option value="distance">По дальности</option><option value="speed">По расчётной скорости</option><option value="duration">По времени в воздухе</option><option value="difficulty">От простых</option></select></label>
+</div>
+<div class="tools"><div><label class="check"><input id="local" type="checkbox">Есть дальность и скорость</label><label class="check"><input id="nocut" type="checkbox">Без ножниц</label></div><button type="button" class="bare" id="reset">Сбросить фильтры</button></div>
+<div class="cards" id="cards"></div>
+<div class="more"><button class="secondary" type="button" id="more" hidden>Показать ещё</button></div>
+<noscript><p>Включи JavaScript для работы каталога или <a href="https://www.foldnfly.com/index.html">открой каталог Fold ’N Fly</a>.</p></noscript>
+</section>
+<section class="about" id="method" aria-labelledby="method-title"><h2 id="method-title">Как читать данные</h2>
+<p><strong>Сложность, дальность и время:</strong> уровни и средние результаты тестовых запусков, опубликованные в карточках <a href="https://www.foldnfly.com/index.html" target="_blank" rel="noopener">Fold ’N Fly</a>. Сложность «Сюзанны» оценена по её сгибам, а показатели её исторического рекорда приведены отдельно и не участвуют в сортировке по полёту.</p>
+<p><strong>Скорость ≈:</strong> средняя дальность ÷ среднее время × 3,6. Это оценка темпа продвижения в км/ч, а не замер скорости по траектории или в момент броска. Ветер, бумага и техника запуска меняют результат.</p>
+<p><strong>Без данных:</strong> знак «—» означает, что не удалось найти подходящее значение. В карточке каждой модели есть калькулятор для собственного запуска.</p>
+<p><strong>Чертежи и анимация сгибания:</strong> для всех 59 моделей построены многослойные геометрические схемы каждого шага с линиями сгиба долиной и горой, стрелками, разметкой и расправлением крыльев. Во вкладке «Видео» работает непрерывная 3D-анимация складывания частей листа, а также доступны готовый MP4-ролик и авторская видеозапись.</p></section>
+</main>
+<footer class="footer"><div class="wrap">Бумажный аэродром · Каталог и мастерская складывания</div></footer>
+<dialog id="detail" aria-labelledby="plane-title"><div class="modal-head"><div><div class="kicker" id="plane-label"></div><h2 id="plane-title"></h2><p class="modal-meta" id="plane-meta"></p></div><form method="dialog"><button class="secondary" aria-label="Закрыть">×</button></form></div>
+<div class="modal-body"><div id="plane-metrics"></div><div class="tabs" aria-label="Формат инструкции"><button id="steps-tab" type="button" aria-pressed="true">Картинки</button><button id="video-tab" type="button" aria-pressed="false">Видео</button></div><div id="pane"></div><div id="credit" class="source-note"></div></div></dialog>
+<script>
+// Constructive 2.5D/3D Origami Geometry & Part-Folding Animation Engine v2
+(function (root) {
+  'use strict';
+
+  const EPS = 1e-5;
+  const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeInOut = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+  function lineFrame(x1, y1, x2, y2) {
+    const dx = x2 - x1, dy = y2 - y1;
+    const len = Math.hypot(dx, dy) || 1;
+    const tx = dx / len, ty = dy / len;
+    return { x1, y1, x2, y2, tx, ty, nx: -ty, ny: tx, len };
+  }
+
+  function signedDist(f, x, y) {
+    return (x - f.x1) * f.nx + (y - f.y1) * f.ny;
+  }
+
+  function reflectPt(f, x, y) {
+    const d = signedDist(f, x, y);
+    return [x - 2 * d * f.nx, y - 2 * d * f.ny];
+  }
+
+  function rotatePt3D(f, x, y, theta, dir) {
+    const rx = x - f.x1, ry = y - f.y1;
+    const s = rx * f.tx + ry * f.ty;
+    const d = rx * f.nx + ry * f.ny;
+    const c = Math.cos(theta), sn = Math.sin(theta) * dir;
+    const bx = f.x1 + s * f.tx + d * c * f.nx;
+    const by = f.y1 + s * f.ty + d * c * f.ny;
+    const z = Math.min(95, Math.abs(d)) * sn;
+    return [bx + z * 0.09, by - z * 0.25, z];
+  }
+
+  function clipPoly(poly, f, sign) {
+    const out = [];
+    const n = poly.length;
+    if (n < 3) return out;
+    for (let i = 0; i < n; i++) {
+      const a = poly[i], b = poly[(i + 1) % n];
+      const da = signedDist(f, a[0], a[1]) * sign;
+      const db = signedDist(f, b[0], b[1]) * sign;
+      const ina = da >= -EPS, inb = db >= -EPS;
+      if (ina && inb) {
+        out.push(b);
+      } else if (ina && !inb) {
+        const t = da / (da - db);
+        out.push([lerp(a[0], b[0], t), lerp(a[1], b[1], t)]);
+      } else if (!ina && inb) {
+        const t = da / (da - db);
+        out.push([lerp(a[0], b[0], t), lerp(a[1], b[1], t)]);
+        out.push(b);
+      }
+    }
+    return cleanPoly(out);
+  }
+
+  function cleanPoly(pts) {
+    const res = [];
+    for (const p of pts) {
+      if (!res.length || Math.hypot(p[0] - res[res.length - 1][0], p[1] - res[res.length - 1][1]) > 0.35) {
+        res.push([+p[0].toFixed(2), +p[1].toFixed(2)]);
+      }
+    }
+    if (res.length > 1 && Math.hypot(res[0][0] - res[res.length - 1][0], res[0][1] - res[res.length - 1][1]) <= 0.35) {
+      res.pop();
+    }
+    return res.length >= 3 && polyArea(res) > 1.8 ? res : [];
+  }
+
+  function polyArea(pts) {
+    let a = 0;
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i], q = pts[(i + 1) % pts.length];
+      a += p[0] * q[1] - q[0] * p[1];
+    }
+    return Math.abs(a) * 0.5;
+  }
+
+  function polyCentroid(pts) {
+    let cx = 0, cy = 0, a = 0;
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i], q = pts[(i + 1) % pts.length];
+      const cross = p[0] * q[1] - q[0] * p[1];
+      a += cross;
+      cx += (p[0] + q[0]) * cross;
+      cy += (p[1] + q[1]) * cross;
+    }
+    if (Math.abs(a) < 1e-3) {
+      return [pts.reduce((s, p) => s + p[0], 0) / pts.length, pts.reduce((s, p) => s + p[1], 0) / pts.length];
+    }
+    return [cx / (3 * a), cy / (3 * a)];
+  }
+
+  function ptInPoly(x, y, poly) {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const xi = poly[i][0], yi = poly[i][1];
+      const xj = poly[j][0], yj = poly[j][1];
+      if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi + 1e-9) + xi)) {
+        inside = !inside;
+      }
+    }
+    return inside;
+  }
+
+  // Exact segment clipping across union of target polygons
+  function clipSegToPolys(x1, y1, x2, y2, layers) {
+    if (!layers || !layers.length) return null;
+    const N = 72;
+    let first = null, last = null;
+    for (let i = 0; i <= N; i++) {
+      const t = i / N;
+      const px = lerp(x1, x2, t), py = lerp(y1, y2, t);
+      if (layers.some(l => ptInPoly(px, py, l.poly))) {
+        if (!first) first = [px, py];
+        last = [px, py];
+      }
+    }
+    return first && last && Math.hypot(last[0] - first[0], last[1] - first[1]) > 3 ? [first, last] : null;
+  }
+
+  function clipCreaseList(creases, poly) {
+    if (!creases || !creases.length || poly.length < 3) return [];
+    const out = [];
+    const wrap = [{ poly }];
+    for (const [a, b] of creases) {
+      const s = clipSegToPolys(a[0], a[1], b[0], b[1], wrap);
+      if (s && out.length < 10) out.push(s);
+    }
+    return out;
+  }
+
+  function cloneState(st) {
+    return {
+      mode: st.mode || '2d',
+      wingsCfg: st.wingsCfg ? JSON.parse(JSON.stringify(st.wingsCfg)) : null,
+      layers: st.layers.map(l => ({
+        poly: l.poly.map(p => [p[0], p[1]]),
+        z: l.z,
+        shade: l.shade,
+        creases: (l.creases || []).map(c => [[c[0][0], c[0][1]], [c[1][0], c[1][1]]])
+      })),
+      marks: (st.marks || []).map(m => [[m[0][0], m[0][1]], [m[1][0], m[1][1]]])
+    };
+  }
+
+  function makeSheet(orient = 'portrait') {
+    const w = orient === 'landscape' ? 98 : orient === 'square' ? 82 : 76;
+    const h = orient === 'landscape' ? 76 : orient === 'square' ? 82 : 98;
+    return {
+      mode: '2d',
+      wingsCfg: null,
+      marks: [],
+      layers: [{ poly: [[-w, -h], [w, -h], [w, h], [-w, h]], z: 0, shade: 0, creases: [] }]
+    };
+  }
+
+  function applySingleFold(st, x1, y1, x2, y2, px, py, opts = {}) {
+    const f = lineFrame(x1, y1, x2, y2);
+    const pickSign = signedDist(f, px, py) >= 0 ? 1 : -1;
+    const dir = opts.mountain ? -1 : 1;
+    const scope = opts.scope || 'all';
+
+    const sorted = [...st.layers].sort((a, b) => a.z - b.z);
+    let targetSet = new Set(sorted);
+    if (scope === 'top') {
+      // Pick highest layer that actually contains (px, py) on the moving side
+      const exact = sorted.filter(l => {
+        const mp = clipPoly(l.poly, f, pickSign);
+        return mp.length >= 3 && ptInPoly(px, py, mp);
+      });
+      const fallback = exact.length ? exact : sorted.filter(l => clipPoly(l.poly, f, pickSign).length >= 3);
+      if (fallback.length) targetSet = new Set([fallback[fallback.length - 1]]);
+    } else if (scope === 'upper') {
+      const up = sorted.filter(l => l.z > 0.2 && clipPoly(l.poly, f, pickSign).length >= 3);
+      if (up.length) targetSet = new Set(up);
+    }
+
+    const stayLayers = [];
+    const movingParts = [];
+    const parentLayers = [];
+    let maxZ = sorted.reduce((m, l) => Math.max(m, l.z), 0);
+    let minZ = sorted.reduce((m, l) => Math.min(m, l.z), 0);
+
+    for (const l of sorted) {
+      if (!targetSet.has(l)) {
+        stayLayers.push(cloneState({ layers: [l] }).layers[0]);
+        continue;
+      }
+      const moveP = clipPoly(l.poly, f, pickSign);
+      const stayP = clipPoly(l.poly, f, -pickSign);
+      if (moveP.length >= 3 && stayP.length >= 3) {
+        parentLayers.push({ poly: l.poly });
+      }
+      if (stayP.length >= 3) {
+        const cr = clipCreaseList(l.creases, stayP);
+        stayLayers.push({ poly: stayP, z: l.z, shade: l.shade, creases: cr });
+      }
+      if (moveP.length >= 3) {
+        movingParts.push({ poly: moveP, z: l.z, shade: l.shade, creases: clipCreaseList(l.creases, moveP) });
+      }
+    }
+
+    if (!parentLayers.length) {
+      for (const m of movingParts) parentLayers.push({ poly: m.poly });
+    }
+
+    if (opts.creaseOnly) {
+      const next = cloneState(st);
+      for (const l of next.layers) {
+        if (!targetSet.has(sorted.find(s => s.z === l.z) || l)) continue;
+        const seg = clipSegToPolys(x1 - f.tx * 300, y1 - f.ty * 300, x1 + f.tx * 300, y1 + f.ty * 300, [l]);
+        if (seg) l.creases.push(seg);
+      }
+      return {
+        next,
+        anim: { type: 'crease', hinges: [{ f, movingParts, stayLayers, parentLayers, dir }] }
+      };
+    }
+
+    const foldedLayers = movingParts.slice().reverse().map((m, idx) => {
+      const rPoly = m.poly.map(([x, y]) => reflectPt(f, x, y));
+      const rCreases = (m.creases || []).map(([a, b]) => [reflectPt(f, a[0], a[1]), reflectPt(f, b[0], b[1])]);
+      let newZ;
+      if (opts.tuck && stayLayers.length >= 2) {
+        const topZ = Math.max(...stayLayers.map(s => s.z));
+        newZ = topZ - 0.35 + idx * 0.04;
+      } else if (dir > 0) {
+        newZ = maxZ + 1 + idx * 0.2;
+      } else {
+        newZ = minZ - 1 - (movingParts.length - idx) * 0.2;
+      }
+      const nextShade = opts.tuck ? 3 : dir < 0 ? 2 : (m.shade === 0 ? 1 : m.shade === 1 ? 2 : 1);
+      return { poly: rPoly, z: newZ, shade: nextShade, creases: rCreases };
+    });
+
+    const next = {
+      mode: '2d',
+      wingsCfg: null,
+      marks: st.marks ? st.marks.slice() : [],
+      layers: [...stayLayers, ...foldedLayers].sort((a, b) => a.z - b.z)
+    };
+    return {
+      next,
+      anim: { type: 'fold', hinges: [{ f, movingParts, stayLayers, parentLayers, foldedLayers, dir, angle: opts.angle || Math.PI }] }
+    };
+  }
+
+  function applyWaterbomb(st, yBase) {
+    const allPts = st.layers.flatMap(l => l.poly);
+    const minY = Math.min(...allPts.map(p => p[1]));
+    const maxY = Math.max(...allPts.map(p => p[1]));
+    const maxX = Math.max(...allPts.map(p => Math.abs(p[0])));
+    const yb = yBase !== undefined ? yBase : minY + maxX;
+    const apexY = minY;
+    const layers = [];
+    if (maxY > yb + 2) {
+      layers.push({ poly: [[-maxX, yb], [maxX, yb], [maxX, maxY], [-maxX, maxY]], z: 0, shade: 0, creases: [[[0, yb], [0, maxY]]] });
+    }
+    layers.push({ poly: [[0, apexY], [maxX, yb], [-maxX, yb]], z: 1, shade: 2, creases: [] });
+    layers.push({ poly: [[0, apexY], [0, yb], [-maxX, yb]], z: 2, shade: 1, creases: [] });
+    layers.push({ poly: [[0, apexY], [maxX, yb], [0, yb]], z: 2.1, shade: 1, creases: [] });
+    const next = { mode: '2d', wingsCfg: null, marks: [], layers };
+    return {
+      next,
+      anim: { type: 'waterbomb', prev: cloneState(st), next: cloneState(next), minY: apexY, yBase: yb, maxX, maxY }
+    };
+  }
+
+  function applyDiamondCollapse(st, yMid) {
+    const allPts = st.layers.flatMap(l => l.poly);
+    const minY = Math.min(...allPts.map(p => p[1])), maxY = Math.max(...allPts.map(p => p[1]));
+    const maxX = Math.max(...allPts.map(p => Math.abs(p[0])));
+    const ym = yMid !== undefined ? yMid : 0;
+    const layers = [
+      { poly: [[0, minY], [maxX, ym], [0, maxY], [-maxX, ym]], z: 1, shade: 2, creases: [] },
+      { poly: [[0, minY], [0, maxY], [-maxX, ym]], z: 2, shade: 1, creases: [] },
+      { poly: [[0, minY], [maxX, ym], [0, maxY]], z: 2.1, shade: 1, creases: [] }
+    ];
+    const next = { mode: '2d', wingsCfg: null, marks: [], layers };
+    return { next, anim: { type: 'waterbomb', prev: cloneState(st), next: cloneState(next), minY, yBase: ym, maxX, maxY: ym } };
+  }
+
+  function applyCut(st, cutSpec) {
+    const prev = cloneState(st);
+    if (st.mode === '3d') {
+      const nextCfg = { ...st.wingsCfg, slits: cutSpec.slits !== false, hook: !!cutSpec.hook, tailFin: !!cutSpec.tailFin };
+      const next = { mode: '3d', wingsCfg: nextCfg, marks: [], layers: st.layers };
+      return { next, anim: { type: 'wings3d', prev, prevCfg: st.wingsCfg, nextCfg, cut: true } };
+    }
+    let nextLayers = [];
+    let discarded = [];
+    let cutLine = [];
+    const allPts = st.layers.flatMap(l => l.poly);
+    const minY = Math.min(...allPts.map(p => p[1])), maxY = Math.max(...allPts.map(p => p[1]));
+    const maxX = Math.max(...allPts.map(p => Math.abs(p[0])));
+
+    if (cutSpec.kind === 'strip_bottom') {
+      const yc = cutSpec.y !== undefined ? cutSpec.y : minY + 2 * maxX;
+      const f = lineFrame(-120, yc, 120, yc);
+      for (const l of st.layers) {
+        const keep = clipPoly(l.poly, f, -1);
+        const drop = clipPoly(l.poly, f, 1);
+        if (keep.length >= 3) nextLayers.push({ ...l, poly: keep });
+        if (drop.length >= 3) discarded.push({ ...l, poly: drop });
+      }
+      // Re-center vertically
+      const kPts = nextLayers.flatMap(l => l.poly);
+      const cy = kPts.length ? (Math.min(...kPts.map(p => p[1])) + Math.max(...kPts.map(p => p[1]))) / 2 : 0;
+      nextLayers = nextLayers.map(l => ({ ...l, poly: l.poly.map(([x, y]) => [x, +(y - cy).toFixed(2)]) }));
+      cutLine = [[-maxX - 6, yc], [maxX + 6, yc]];
+    } else if (cutSpec.kind === 'half_v') {
+      const f = lineFrame(0, -130, 0, 130);
+      for (const l of st.layers) {
+        const keep = clipPoly(l.poly, f, 1);
+        const drop = clipPoly(l.poly, f, -1);
+        if (keep.length >= 3) nextLayers.push({ ...l, poly: keep.map(([x, y]) => [+(x + maxX * 0.5).toFixed(2), y]) });
+        if (drop.length >= 3) discarded.push({ ...l, poly: drop });
+      }
+      cutLine = [[0, minY - 6], [0, maxY + 6]];
+    } else if (cutSpec.kind === 'round_bottom') {
+      const r = 38;
+      const poly = [[-maxX, minY], [maxX, minY], [maxX, maxY - r]];
+      for (let i = 1; i <= 7; i++) {
+        const a = (i / 8) * (Math.PI / 2);
+        poly.push([maxX - r + Math.cos(a) * r, maxY - r + Math.sin(a) * r]);
+      }
+      for (let i = 1; i <= 7; i++) {
+        const a = Math.PI / 2 + (i / 8) * (Math.PI / 2);
+        poly.push([-maxX + r + Math.cos(a) * r, maxY - r + Math.sin(a) * r]);
+      }
+      poly.push([-maxX, maxY - r]);
+      nextLayers = [{ poly: cleanPoly(poly), z: 0, shade: 0, creases: [[[0, minY], [0, maxY]]] }];
+      cutLine = [[maxX - 38, maxY], [maxX, maxY - 38]];
+    } else if (cutSpec.kind === 'crown') {
+      // Fast Swallow M33 step 9: twin tail spikes above horizontal folded bar!
+      nextLayers = [
+        { poly: [[-76, 12], [76, 12], [76, 62], [-76, 62]], z: 0, shade: 1, creases: [[[0, 12], [0, 62]]] },
+        { poly: [[-62, 12], [-34, -48], [-34, 12]], z: 1, shade: 0, creases: [] },
+        { poly: [[34, 12], [34, -48], [62, 12]], z: 1, shade: 0, creases: [] }
+      ];
+      cutLine = [[-34, -48], [34, -48]];
+    } else if (cutSpec.kind === 'diag_corner') {
+      const f = lineFrame(cutSpec.x1, cutSpec.y1, cutSpec.x2, cutSpec.y2);
+      const keepSign = signedDist(f, cutSpec.keepX ?? -10, cutSpec.keepY ?? 0) >= 0 ? 1 : -1;
+      for (const l of st.layers) {
+        const keep = clipPoly(l.poly, f, keepSign);
+        const drop = clipPoly(l.poly, f, -keepSign);
+        if (keep.length >= 3) nextLayers.push({ ...l, poly: keep });
+        if (drop.length >= 3) discarded.push({ ...l, poly: drop });
+      }
+      cutLine = [[cutSpec.x1, cutSpec.y1], [cutSpec.x2, cutSpec.y2]];
+    } else {
+      nextLayers = cloneState(st).layers;
+      cutLine = cutSpec.line || [[-25, maxY - 14], [-25, maxY]];
+    }
+
+    nextLayers = nextLayers.map(l => ({ ...l, creases: clipCreaseList(l.creases, l.poly) }));
+    const next = { mode: '2d', wingsCfg: null, marks: [], layers: nextLayers };
+    return { next, anim: { type: 'cut', prev, next: cloneState(next), discarded, cutLine } };
+  }
+
+  function applyFlip(st, axis = 'x') {
+    const prev = cloneState(st);
+    const maxZ = Math.max(...st.layers.map(l => l.z), 0);
+    const nextLayers = st.layers.map(l => ({
+      poly: l.poly.map(([x, y]) => (axis === 'x' ? [-x, y] : [x, -y])),
+      z: maxZ - l.z,
+      shade: l.shade === 0 ? 1 : l.shade === 1 ? 0 : l.shade,
+      creases: (l.creases || []).map(([a, b]) => [
+        axis === 'x' ? [-a[0], a[1]] : [a[0], -a[1]],
+        axis === 'x' ? [-b[0], b[1]] : [b[0], -b[1]]
+      ])
+    })).sort((a, b) => a.z - b.z);
+    const next = { mode: '2d', wingsCfg: null, marks: [], layers: nextLayers };
+    return { next, anim: { type: 'flip', prev, next: cloneState(next), axis } };
+  }
+
+  function applyRotate(st, deg = 180) {
+    const prev = cloneState(st);
+    const rad = (deg * Math.PI) / 180;
+    const c = Math.cos(rad), s = Math.sin(rad);
+    const rot = ([x, y]) => [+(x * c - y * s).toFixed(2), +(x * s + y * c).toFixed(2)];
+    const nextLayers = st.layers.map(l => ({
+      ...l,
+      poly: l.poly.map(rot),
+      creases: (l.creases || []).map(([a, b]) => [rot(a), rot(b)])
+    }));
+    const next = { mode: '2d', wingsCfg: null, marks: [], layers: nextLayers };
+    return { next, anim: { type: 'rotate', prev, next: cloneState(next), deg } };
+  }
+
+  function applyFoldHalf(st, dir = 'toward') {
+    const res = applySingleFold(st, 0, -140, 0, 140, 42, 0, { mountain: dir === 'away' });
+    const allPts = res.next.layers.flatMap(l => l.poly);
+    const minY = Math.min(...allPts.map(p => p[1])), maxY = Math.max(...allPts.map(p => p[1]));
+    const minX = Math.min(...allPts.map(p => p[0])), maxX = Math.max(...allPts.map(p => p[0]));
+    const cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
+    const nextLayers = res.next.layers.map(l => ({
+      ...l,
+      poly: l.poly.map(([x, y]) => [+(x - cx).toFixed(2), +(y - cy).toFixed(2)]),
+      creases: (l.creases || []).map(([a, b]) => [[a[0] - cx, a[1] - cy], [b[0] - cx, b[1] - cy]])
+    }));
+    const next = { mode: '2d', wingsCfg: null, marks: [], layers: nextLayers };
+    return {
+      next,
+      anim: { type: 'half', hinges: res.anim.hinges, shift: [-cx, -cy], next: cloneState(next) }
+    };
+  }
+
+  function applyWings3D(st, cfg) {
+    const prev = cloneState(st);
+    const baseCfg = st.wingsCfg || {
+      style: cfg.style || 'dart',
+      keel: cfg.keel || 18,
+      span: cfg.span || 74,
+      length: cfg.length || 168,
+      openL: 0,
+      openR: 0,
+      winglets: 0,
+      dihedral: 0,
+      slits: false,
+      canard: false
+    };
+    const nextCfg = {
+      ...baseCfg,
+      ...cfg,
+      openL: 1,
+      openR: cfg.mode === 'one' ? 0.06 : 1,
+      winglets: cfg.winglets !== undefined ? cfg.winglets : baseCfg.winglets,
+      dihedral: cfg.dihedral !== undefined ? cfg.dihedral : baseCfg.dihedral
+    };
+    const next = { mode: '3d', wingsCfg: nextCfg, marks: [], layers: st.layers };
+    return { next, anim: { type: 'wings3d', prev, prevCfg: baseCfg, nextCfg } };
+  }
+
+  function compileModel(recipe) {
+    const history = [makeSheet(recipe.orient || 'portrait')];
+    const compiled = [];
+
+    for (let i = 0; i < recipe.steps.length; i++) {
+      const [title, text, op] = recipe.steps[i];
+      let cur = cloneState(history[history.length - 1]);
+      if (op[7] && op[7].unfoldPrev && history.length >= 2) {
+        const prevBase = cloneState(history[history.length - 2]);
+        prevBase.layers[0].creases = clipCreaseList([...prevBase.layers[0].creases, ...cur.layers.flatMap(l => l.creases || [])], prevBase.layers[0].poly);
+        cur = prevBase;
+      }
+      let res;
+      const kind = op[0];
+      if (kind === 'fold') {
+        const [, x1, y1, x2, y2, px, py, opts] = op;
+        res = applySingleFold(cur, x1, y1, x2, y2, px, py, opts || {});
+      } else if (kind === 'sym') {
+        const [, x1, y1, x2, y2, px, py, opts] = op;
+        const o = opts || {};
+        const r1 = applySingleFold(cur, x1, y1, x2, y2, px, py, o);
+        const r2 = applySingleFold(r1.next, -x1, y1, -x2, y2, -px, py, o);
+        res = {
+          next: r2.next,
+          anim: { type: o.creaseOnly ? 'crease' : 'sym_fold', hinges: [r1.anim.hinges[0], r2.anim.hinges[0]] }
+        };
+      } else if (kind === 'unfold') {
+        const targetIdx = op[1] !== undefined ? op[1] : Math.max(0, history.length - 2);
+        const target = cloneState(history[clamp(targetIdx, 0, history.length - 1)]);
+        if (targetIdx === 0 && cur.layers.length) {
+          target.layers[0].creases = clipCreaseList([...target.layers[0].creases, ...cur.layers.flatMap(l => l.creases || [])], target.layers[0].poly);
+        }
+        res = { next: target, anim: { type: 'unfold', prev: cur, next: target } };
+      } else if (kind === 'waterbomb') {
+        res = applyWaterbomb(cur, op[1]);
+      } else if (kind === 'diamond_collapse') {
+        res = applyDiamondCollapse(cur, op[1]);
+      } else if (kind === 'cut') {
+        res = applyCut(cur, op[1] || { kind: 'strip_bottom' });
+      } else if (kind === 'flip') {
+        res = applyFlip(cur, op[1] || 'x');
+      } else if (kind === 'rot') {
+        res = applyRotate(cur, op[1] || 180);
+      } else if (kind === 'mark') {
+        const next = cloneState(cur);
+        next.marks = [...(next.marks || []), ...(op[1] || [])];
+        res = { next, anim: { type: 'mark', prev: cur, next, lines: op[1] || [] } };
+      } else if (kind === 'custom') {
+        // Custom multi-layer shape (e.g., Boomerang L-shape!) with smooth morph/hinge
+        const next = { mode: '2d', wingsCfg: null, marks: [], layers: op[1].map((p, k) => ({ poly: p.poly, z: k, shade: p.shade || 0, creases: p.creases || [] })) };
+        res = { next, anim: { type: 'morph', prev: cur, next: cloneState(next), arrow: op[2] || null } };
+      } else if (kind === 'half') {
+        res = applyFoldHalf(cur, op[1] || 'toward');
+      } else if (kind === 'wings') {
+        res = applyWings3D(cur, op[1] || {});
+      } else {
+        res = { next: cur, anim: { type: 'hold', prev: cur, next: cur } };
+      }
+
+      history.push(res.next);
+      compiled.push({ index: i, title, text, before: cur, after: res.next, anim: res.anim, op });
+    }
+    return compiled;
+  }
+
+  // =========================================================================
+  // RENDERER
+  // =========================================================================
+  const PALETTE = {
+    bg: '#e9eff2',
+    grid: '#bfd0da',
+    stroke: '#1d3549',
+    crease: '#88a3b6',
+    ghost: '#7994a7',
+    red: '#a83322',
+    blue: '#265c8c',
+    shades: ['#fffdf5', '#d6e4ee', '#bfd2df', '#a2bccd']
+  };
+
+  function drawPoly(ctx, pts, fill, stroke, lw = 1.9, dash = null) {
+    if (!pts || pts.length < 3) return;
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(pts[0][0], pts[0][1]);
+    for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+    ctx.closePath();
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) {
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = lw;
+      ctx.lineJoin = 'round';
+      if (dash) ctx.setLineDash(dash);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawArrow(ctx, x1, y1, x2, y2, color = PALETTE.red, bidir = false) {
+    const dx = x2 - x1, dy = y2 - y1, d = Math.hypot(dx, dy);
+    if (d < 7) return;
+    const mx = (x1 + x2) / 2 - (dy / d) * Math.min(18, d * 0.22);
+    const my = (y1 + y2) / 2 + (dx / d) * Math.min(18, d * 0.22);
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.quadraticCurveTo(mx, my, x2, y2);
+    ctx.stroke();
+
+    const ang = Math.atan2(y2 - my, x2 - mx);
+    const head = 7.5;
+    ctx.beginPath();
+    ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - head * Math.cos(ang - 0.46), y2 - head * Math.sin(ang - 0.46));
+    ctx.lineTo(x2 - head * Math.cos(ang + 0.46), y2 - head * Math.sin(ang + 0.46));
+    ctx.closePath();
+    ctx.fill();
+
+    if (bidir) {
+      const ang0 = Math.atan2(y1 - my, x1 - mx);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x1 - head * Math.cos(ang0 - 0.46), y1 - head * Math.sin(ang0 - 0.46));
+      ctx.lineTo(x1 - head * Math.cos(ang0 + 0.46), y1 - head * Math.sin(ang0 + 0.46));
+      ctx.closePath();
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawState2D(ctx, st, alpha = 1) {
+    ctx.save();
+    ctx.globalAlpha *= alpha;
+    ctx.save();
+    ctx.translate(3, 4);
+    for (const l of st.layers) drawPoly(ctx, l.poly, 'rgba(22,45,68,0.10)', null);
+    ctx.restore();
+
+    for (const l of st.layers) {
+      drawPoly(ctx, l.poly, PALETTE.shades[l.shade % 4], PALETTE.stroke, 1.85);
+      if (l.creases && l.creases.length) {
+        ctx.save();
+        ctx.strokeStyle = PALETTE.crease;
+        ctx.lineWidth = 1.1;
+        ctx.setLineDash([4, 3]);
+        for (const [a, b] of l.creases) {
+          ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+        }
+        ctx.restore();
+      }
+    }
+    if (st.marks && st.marks.length) {
+      ctx.save();
+      ctx.strokeStyle = PALETTE.blue;
+      ctx.lineWidth = 1.6;
+      ctx.setLineDash([3, 3]);
+      for (const [a, b] of st.marks) {
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      }
+      ctx.restore();
+    }
+    ctx.restore();
+  }
+
+  // Architectural 3D Isometric Airplane Renderer
+  function drawWings3D(ctx, cfg, openL, openR, wingletT, showGuides) {
+    const style = cfg.style || 'dart';
+    const keel = cfg.keel || 20;
+    const span = cfg.span || 74;
+    const dihed = (cfg.dihedral || 0) * 10;
+
+    // Nose pointing forward-left (-88, 12), spine rising slightly toward tail (+76, -8)
+    const nx = -86, ny = 14;
+    const tx = 78, ty = -8;
+
+    const buildWing = (open, isNear) => {
+      const s = isNear ? 1 : -1;
+      // Closed (open=0): wing stands straight up above spine!
+      const closedTipX = tx - 14, closedTipY = ty - span * 0.92;
+      const closedLeadX = nx + 36, closedLeadY = ny - span * 0.55;
+
+      // Open (open=1): isometric three-quarter spread!
+      const openTipX = isNear ? tx + 10 : tx - 28;
+      const openTipY = (isNear ? ty + span * 0.68 : ty - span * 0.52) - dihed;
+      const openMidX = isNear ? nx + 34 : nx + 18;
+      const openMidY = (isNear ? ny + span * 0.44 : ny - span * 0.36) - dihed * 0.7;
+
+      const tipX = lerp(closedTipX, openTipX, open);
+      const tipY = lerp(closedTipY, openTipY, open);
+      const midX = lerp(closedLeadX, openMidX, open);
+      const midY = lerp(closedLeadY, openMidY, open);
+
+      let poly;
+      if (style === 'stealth' || style === 'wide') {
+        poly = [[nx, ny], [midX, midY], [tipX, tipY], [lerp(tx, tipX, 0.25), lerp(ty, tipY, 0.18)], [tx, ty]];
+      } else if (style === 'blunt' || style === 'square') {
+        const frontTipX = lerp(nx + 4, isNear ? nx + 8 : nx - 12, open);
+        const frontTipY = lerp(ny - span * 0.65, isNear ? ny + span * 0.46 : ny - span * 0.38, open);
+        poly = [[nx, ny], [frontTipX, frontTipY], [tipX, tipY], [tx, ty]];
+      } else if (style === 'round') {
+        poly = [
+          [nx, ny],
+          [lerp(nx + 14, midX - 18, open), lerp(ny - 28, midY * 0.6, open)],
+          [midX, midY],
+          [lerp(midX, tipX, 0.6), lerp(midY, tipY, 0.75)],
+          [tipX, tipY],
+          [tx, ty]
+        ];
+      } else if (style === 'canard') {
+        const cx1 = nx + 34, cy1 = lerp(ny - 22, isNear ? ny + 26 : ny - 20, open);
+        const cx2 = nx + 44, cy2 = lerp(ny - 8, isNear ? ny + 10 : ny - 8, open);
+        poly = [[nx, ny], [cx1, cy1], [cx2, cy2], [tipX, tipY], [tx, ty]];
+      } else if (style === 'swallow') {
+        const notchX = lerp(tx, tipX, 0.46) - 18;
+        const notchY = lerp(ty, tipY, 0.46);
+        poly = [[nx, ny], [midX, midY], [tipX, tipY], [notchX, notchY], [tx + 6, ty - 4], [tx, ty]];
+      } else {
+        // Classic crisp dart
+        poly = [[nx, ny], [tipX, tipY], [tx, ty]];
+      }
+
+      const fill = !isNear ? '#c6d8e4' : (open < 0.3 ? '#eef4f8' : '#fffdf5');
+      drawPoly(ctx, poly, fill, PALETTE.stroke, 1.9);
+
+      // Center crease / inner fold line along wing root
+      ctx.save();
+      ctx.strokeStyle = PALETTE.crease;
+      ctx.lineWidth = 1.1;
+      ctx.beginPath();
+      ctx.moveTo(nx + 8, ny - 1);
+      ctx.lineTo(lerp(tx, tipX, 0.25), lerp(ty, tipY, 0.25));
+      ctx.stroke();
+      ctx.restore();
+
+      if (wingletT > 0.03) {
+        const wh = 16 * wingletT * (cfg.wingletDown ? -1 : 1);
+        const wx0 = style === 'dart' || style === 'canard' ? lerp(nx, tipX, 0.72) : midX;
+        const wy0 = style === 'dart' || style === 'canard' ? lerp(ny, tipY, 0.72) : midY;
+        const wPoly = [[wx0, wy0], [tipX, tipY], [tipX - 2, tipY - wh], [wx0 - 2, wy0 - wh * 0.85]];
+        drawPoly(ctx, wPoly, !isNear ? '#aec4d4' : '#d5e4ee', PALETTE.stroke, 1.75);
+      }
+      if (cfg.slits && open > 0.6) {
+        const sx = lerp(tx, tipX, 0.38), sy = lerp(ty, tipY, 0.38);
+        ctx.save();
+        ctx.strokeStyle = PALETTE.red;
+        ctx.lineWidth = 2.1;
+        ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx - 13, sy + 2); ctx.stroke();
+        ctx.restore();
+      }
+      return { tipX, tipY, closedTipX, closedTipY };
+    };
+
+    // Soft ground shadow
+    ctx.save();
+    ctx.fillStyle = 'rgba(21,45,68,0.11)';
+    ctx.beginPath();
+    ctx.ellipse(2, 42, 78, 12 + 16 * Math.max(openL, openR), -0.1, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // 1. Far wing
+    buildWing(openR, false);
+    // 2. Central Fuselage Keel
+    const keelPoly = [
+      [nx, ny],
+      [tx, ty],
+      [tx - 8, ty + keel],
+      [nx + (cfg.hook ? 26 : 16), ny + keel * 0.62]
+    ];
+    drawPoly(ctx, keelPoly, '#adc4d4', PALETTE.stroke, 1.9);
+    if (cfg.hook) {
+      // Launcher notch on keel
+      drawPoly(ctx, [[nx + 22, ny + keel * 0.6], [nx + 32, ny + keel * 0.35], [nx + 34, ny + keel * 0.68]], PALETTE.bg, PALETTE.red, 1.6);
+    }
+    // 3. Near wing
+    const near = buildWing(openL, true);
+
+    if (showGuides) {
+      ctx.save();
+      ctx.strokeStyle = PALETTE.red;
+      ctx.lineWidth = 2;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.moveTo(nx, ny); ctx.lineTo(tx, ty); ctx.stroke();
+      ctx.restore();
+      if (cfg.winglets && wingletT >= 0.9) {
+        drawArrow(ctx, near.tipX - 4, near.tipY + 8, near.tipX - 4, near.tipY - 18, PALETTE.red);
+      } else {
+        drawArrow(ctx, near.closedTipX * 0.4, near.closedTipY * 0.65, near.tipX * 0.65, near.tipY * 0.78, PALETTE.red);
+      }
+    }
+  }
+
+  function drawHingeProgress(ctx, hinge, u) {
+    const theta = easeInOut(clamp(u, 0, 1)) * (hinge.angle || Math.PI);
+    drawState2D(ctx, { layers: hinge.stayLayers });
+
+    const lift = Math.sin(theta);
+    if (lift > 0.04 && hinge.dir > 0) {
+      for (const m of hinge.movingParts) {
+        const shPts = m.poly.map(([x, y]) => {
+          const [px, py, z] = rotatePt3D(hinge.f, x, y, theta, hinge.dir);
+          return [px + z * 0.16, py + z * 0.28];
+        });
+        drawPoly(ctx, shPts, `rgba(21,45,68,${(0.18 * lift).toFixed(3)})`, null);
+      }
+    }
+
+    const past90 = theta > Math.PI * 0.5;
+    const parts = past90 ? hinge.movingParts.slice().reverse() : hinge.movingParts;
+    for (const m of parts) {
+      const pts3 = m.poly.map(([x, y]) => rotatePt3D(hinge.f, x, y, theta, hinge.dir));
+      const pts2 = pts3.map(p => [p[0], p[1]]);
+      const fill = past90 ? '#cfe0eb' : (lift > 0.35 ? '#f4f1e6' : PALETTE.shades[m.shade % 4]);
+      drawPoly(ctx, pts2, fill, PALETTE.stroke, 1.9);
+    }
+
+    const seg = clipSegToPolys(
+      hinge.f.x1 - hinge.f.tx * 260, hinge.f.y1 - hinge.f.ty * 260,
+      hinge.f.x1 + hinge.f.tx * 260, hinge.f.y1 + hinge.f.ty * 260,
+      hinge.parentLayers
+    );
+    if (seg) {
+      ctx.save();
+      ctx.strokeStyle = hinge.dir < 0 ? PALETTE.blue : PALETTE.red;
+      ctx.lineWidth = 2;
+      ctx.setLineDash(hinge.dir < 0 ? [7, 3, 2, 3] : [5, 4]);
+      ctx.beginPath(); ctx.moveTo(seg[0][0], seg[0][1]); ctx.lineTo(seg[1][0], seg[1][1]); ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  function renderStepDiagram(ctx, w, h, step) {
+    ctx.save();
+    ctx.fillStyle = PALETTE.bg;
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = PALETTE.grid;
+    for (let x = 14; x < w; x += 18) {
+      for (let y = 14; y < h; y += 18) ctx.fillRect(x, y, 1.5, 1.5);
+    }
+
+    const scale = Math.min(w / 256, h / 236);
+    ctx.translate(w / 2, h / 2 + 2);
+    ctx.scale(scale, scale);
+
+    const anim = step.anim;
+    if (step.after.mode === '3d') {
+      const c = step.after.wingsCfg;
+      drawWings3D(ctx, c, c.openL, c.openR, c.winglets || 0, true);
+      ctx.restore();
+      return;
+    }
+
+    if (anim.type === 'crease') {
+      drawState2D(ctx, step.after);
+      for (const hng of anim.hinges) {
+        const seg = clipSegToPolys(
+          hng.f.x1 - hng.f.tx * 260, hng.f.y1 - hng.f.ty * 260,
+          hng.f.x1 + hng.f.tx * 260, hng.f.y1 + hng.f.ty * 260,
+          hng.parentLayers
+        );
+        if (seg) {
+          ctx.save();
+          ctx.strokeStyle = PALETTE.red;
+          ctx.lineWidth = 2.1;
+          ctx.setLineDash([5, 4]);
+          ctx.beginPath(); ctx.moveTo(seg[0][0], seg[0][1]); ctx.lineTo(seg[1][0], seg[1][1]); ctx.stroke();
+          ctx.restore();
+        }
+        if (hng.movingParts.length) {
+          const c0 = polyCentroid(hng.movingParts[0].poly);
+          const c1 = reflectPt(hng.f, c0[0], c0[1]);
+          drawArrow(ctx, lerp(c0[0], c1[0], 0.16), lerp(c0[1], c1[1], 0.16), lerp(c0[0], c1[0], 0.74), lerp(c0[1], c1[1], 0.74), PALETTE.red, true);
+        }
+      }
+    } else if (anim.type === 'fold' || anim.type === 'sym_fold' || anim.type === 'half') {
+      const shift = anim.shift || [0, 0];
+      for (const hng of anim.hinges) {
+        for (const m of hng.movingParts) {
+          const gp = m.poly.map(([x, y]) => [x + shift[0], y + shift[1]]);
+          drawPoly(ctx, gp, 'rgba(255,253,245,0.45)', PALETTE.ghost, 1.3, [4, 3]);
+        }
+      }
+      drawState2D(ctx, step.after);
+      for (const hng of anim.hinges) {
+        const seg = clipSegToPolys(
+          hng.f.x1 - hng.f.tx * 260, hng.f.y1 - hng.f.ty * 260,
+          hng.f.x1 + hng.f.tx * 260, hng.f.y1 + hng.f.ty * 260,
+          hng.parentLayers
+        );
+        if (seg) {
+          ctx.save();
+          ctx.strokeStyle = hng.dir < 0 ? PALETTE.blue : PALETTE.red;
+          ctx.lineWidth = 2.1;
+          ctx.setLineDash(hng.dir < 0 ? [7, 3, 2, 3] : [5, 4]);
+          ctx.beginPath();
+          ctx.moveTo(seg[0][0] + shift[0], seg[0][1] + shift[1]);
+          ctx.lineTo(seg[1][0] + shift[0], seg[1][1] + shift[1]);
+          ctx.stroke();
+          ctx.restore();
+        }
+        if (hng.movingParts.length) {
+          const c0 = polyCentroid(hng.movingParts[0].poly);
+          const c1 = reflectPt(hng.f, c0[0], c0[1]);
+          drawArrow(ctx, c0[0] + shift[0], c0[1] + shift[1], c1[0] + shift[0], c1[1] + shift[1], hng.dir < 0 ? PALETTE.blue : PALETTE.red);
+        }
+      }
+    } else if (anim.type === 'waterbomb') {
+      drawPoly(ctx, [[-anim.maxX, anim.minY], [anim.maxX, anim.minY], [anim.maxX, anim.yBase], [-anim.maxX, anim.yBase]], 'rgba(255,253,245,0.42)', PALETTE.ghost, 1.3, [4, 3]);
+      drawState2D(ctx, step.after);
+      const ym = (anim.minY + anim.yBase) * 0.55;
+      drawArrow(ctx, -anim.maxX + 6, ym, -18, ym + 16, PALETTE.red);
+      drawArrow(ctx, anim.maxX - 6, ym, 18, ym + 16, PALETTE.red);
+    } else if (anim.type === 'unfold') {
+      drawState2D(ctx, step.after);
+      for (const l of step.before.layers) drawPoly(ctx, l.poly, null, PALETTE.ghost, 1.3, [4, 3]);
+      drawArrow(ctx, -18, -24, -56, -52, PALETTE.blue);
+      drawArrow(ctx, 18, -24, 56, -52, PALETTE.blue);
+    } else if (anim.type === 'cut') {
+      for (const d of anim.discarded) {
+        ctx.save(); ctx.translate(6, 10);
+        drawPoly(ctx, d.poly, 'rgba(255,253,245,0.5)', PALETTE.ghost, 1.3, [4, 3]);
+        ctx.restore();
+      }
+      drawState2D(ctx, step.after);
+      if (anim.cutLine.length === 2) {
+        const [a, b] = anim.cutLine;
+        ctx.save();
+        ctx.strokeStyle = PALETTE.red;
+        ctx.lineWidth = 2.2;
+        ctx.setLineDash([6, 4]);
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+        ctx.font = 'bold 18px sans-serif';
+        ctx.fillStyle = PALETTE.red;
+        ctx.fillText('✂', a[0] - 8, a[1] - 4);
+        ctx.restore();
+      }
+    } else if (anim.type === 'flip' || anim.type === 'rotate') {
+      drawState2D(ctx, step.after);
+      drawArrow(ctx, -42, -88, 42, -88, PALETTE.blue);
+    } else if (anim.type === 'morph') {
+      drawState2D(ctx, step.after);
+      if (anim.arrow) drawArrow(ctx, anim.arrow[0], anim.arrow[1], anim.arrow[2], anim.arrow[3], PALETTE.red);
+    } else {
+      drawState2D(ctx, step.after);
+    }
+
+    ctx.restore();
+  }
+
+  function renderStepFrame(ctx, w, h, step, p) {
+    ctx.save();
+    ctx.fillStyle = PALETTE.bg;
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = PALETTE.grid;
+    for (let x = 16; x < w; x += 20) {
+      for (let y = 16; y < h; y += 20) ctx.fillRect(x, y, 1.5, 1.5);
+    }
+
+    const scale = Math.min(w / 258, h / 236);
+    ctx.translate(w / 2, h / 2 + 2);
+    ctx.scale(scale, scale);
+
+    const anim = step.anim;
+    const u = clamp((p - 0.08) / 0.80, 0, 1);
+
+    if (anim.type === 'fold') {
+      drawHingeProgress(ctx, anim.hinges[0], u);
+    } else if (anim.type === 'sym_fold') {
+      const u1 = clamp(u * 1.28, 0, 1);
+      const u2 = clamp(u * 1.28 - 0.28, 0, 1);
+      if (u2 <= 0.001) drawHingeProgress(ctx, anim.hinges[0], u1);
+      else drawHingeProgress(ctx, anim.hinges[1], u2);
+    } else if (anim.type === 'crease') {
+      const wave = u < 0.5 ? u * 2 : (1 - u) * 2;
+      if (anim.hinges.length === 1) {
+        drawHingeProgress(ctx, { ...anim.hinges[0], angle: Math.PI * 0.85 }, wave);
+      } else if (u < 0.5) {
+        const w1 = u < 0.25 ? u * 4 : (0.5 - u) * 4;
+        drawHingeProgress(ctx, { ...anim.hinges[0], angle: Math.PI * 0.85 }, w1);
+      } else {
+        const v = u - 0.5;
+        const w2 = v < 0.25 ? v * 4 : (0.5 - v) * 4;
+        drawHingeProgress(ctx, { ...anim.hinges[1], angle: Math.PI * 0.85 }, w2);
+      }
+      if (p > 0.88) drawState2D(ctx, step.after);
+    } else if (anim.type === 'half') {
+      const e = easeInOut(u);
+      ctx.save();
+      ctx.translate(anim.shift[0] * e, anim.shift[1] * e);
+      drawHingeProgress(ctx, anim.hinges[0], u);
+      ctx.restore();
+    } else if (anim.type === 'waterbomb') {
+      const e = easeInOut(u);
+      const { minY, yBase, maxX, maxY } = anim;
+      if (maxY > yBase + 2) {
+        drawPoly(ctx, [[-maxX, yBase], [maxX, yBase], [maxX, maxY], [-maxX, maxY]], PALETTE.shades[0], PALETTE.stroke, 1.85);
+      }
+      const topCornerX = lerp(maxX, 0, e);
+      const liftY = Math.sin(e * Math.PI) * 14;
+      drawPoly(ctx, [[0, minY - liftY * 0.4], [maxX, yBase], [-maxX, yBase]], PALETTE.shades[2], PALETTE.stroke, 1.85);
+      drawPoly(ctx, [[-topCornerX, minY - liftY], [0, lerp(minY, yBase, e)], [-maxX, yBase]], PALETTE.shades[1], PALETTE.stroke, 1.85);
+      drawPoly(ctx, [[topCornerX, minY - liftY], [maxX, yBase], [0, lerp(minY, yBase, e)]], PALETTE.shades[1], PALETTE.stroke, 1.85);
+    } else if (anim.type === 'unfold') {
+      const e = easeInOut(u);
+      if (e < 0.48) {
+        ctx.save();
+        ctx.scale(1 + 0.06 * Math.sin(e * Math.PI), 1 - 0.04 * Math.sin(e * Math.PI));
+        drawState2D(ctx, anim.prev);
+        ctx.restore();
+      } else {
+        drawState2D(ctx, anim.next);
+      }
+    } else if (anim.type === 'flip') {
+      const theta = easeInOut(u) * Math.PI;
+      const sx = Math.cos(theta);
+      ctx.save();
+      if (anim.axis === 'x') ctx.scale(Math.max(0.04, Math.abs(sx)), 1 - 0.08 * Math.sin(theta));
+      else ctx.scale(1 - 0.08 * Math.sin(theta), Math.max(0.04, Math.abs(sx)));
+      drawState2D(ctx, theta < Math.PI / 2 ? anim.prev : anim.next);
+      ctx.restore();
+    } else if (anim.type === 'rotate') {
+      const rad = (easeInOut(u) * anim.deg * Math.PI) / 180;
+      ctx.save();
+      ctx.rotate(rad);
+      drawState2D(ctx, anim.prev);
+      ctx.restore();
+    } else if (anim.type === 'cut') {
+      const e = easeInOut(u);
+      drawState2D(ctx, anim.next);
+      if (anim.discarded.length) {
+        ctx.save();
+        ctx.translate(e * 30, e * 38);
+        ctx.rotate(e * 0.16);
+        drawState2D(ctx, { layers: anim.discarded }, Math.max(0, 1 - e * 0.9));
+        ctx.restore();
+      }
+      if (anim.cutLine.length === 2) {
+        const [a, b] = anim.cutLine;
+        const sx = lerp(a[0], b[0], u), sy = lerp(a[1], b[1], u);
+        ctx.save();
+        ctx.strokeStyle = PALETTE.red;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 4]);
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+        ctx.font = 'bold 18px sans-serif';
+        ctx.fillStyle = PALETTE.red;
+        ctx.fillText('✂', sx - 8, sy + 6);
+        ctx.restore();
+      }
+    } else if (anim.type === 'wings3d') {
+      const e = easeInOut(u);
+      const pc = anim.prevCfg, nc = anim.nextCfg;
+      drawWings3D(ctx, nc, lerp(pc.openL || 0, nc.openL, e), lerp(pc.openR || 0, nc.openR, e), lerp(pc.winglets || 0, nc.winglets || 0, e), false);
+    } else if (anim.type === 'morph') {
+      const e = easeInOut(u);
+      if (e < 0.5) drawState2D(ctx, anim.prev, 1 - e * 0.5);
+      else drawState2D(ctx, anim.next, 0.5 + e * 0.5);
+    } else if (anim.type === 'mark') {
+      drawState2D(ctx, anim.prev);
+      const e = easeInOut(u);
+      ctx.save();
+      ctx.strokeStyle = PALETTE.blue;
+      ctx.lineWidth = 2;
+      ctx.setLineDash([4, 3]);
+      for (const [a, b] of anim.lines) {
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(lerp(a[0], b[0], e), lerp(a[1], b[1], e)); ctx.stroke();
+      }
+      ctx.restore();
+    } else {
+      drawState2D(ctx, step.after);
+    }
+
+    ctx.restore();
+  }
+
+  root.OrigamiEngine = { compileModel, renderStepDiagram, renderStepFrame };
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+</script>
+<script>
+'use strict';
+const F='https://www.foldnfly.com/';
+const WIRED='https://www.wired.com/story/achieve-paper-plane-glory/';
+const SUVIDEO='https://www.wired.com/video/watch/learn-to-fold-the-worlds-best-paper-airplane';
+const SUMAKE='https://makezine.com/projects/worlds-best-paper-airplane';
+const footageIds={
+ 0:'u-HKNkao6i0',1:'gZQI1Z_viNg',2:'QbDUiGmxQIQ',3:'WB6NornyZc4',
+ 4:'5puhYt-KeBU',5:'_T5_s7V-gJQ',6:'9BmrfQqrXkg',7:'7i7IdcwjR-4',
+ 8:'3zOwAm7-PDU',9:'9jq-K8s7Ink',10:'Q47Ds2sGq_o',11:'PwW9bpvV5LI',
+ 12:'eXpa0V8c61s',13:'EoZQn6Nzi5g',14:'x2HL5j4doP8',15:'VBqIg5zD1Zg',
+ 16:'peJsIO8YnAw',17:'ypBKmtdjt-Q',18:'NPHu7ipzklk',19:'5hQ5PHgJwu8',
+ 20:'_-x_1moMKDg',21:'Epz7IeYydcI',22:'Ahf1x8Zek7c',23:'NgbIRez2aUo',
+ 24:'Gf89XWjGN5E',27:'54yrHVlW0vg',28:'-fs8bxYYWGk',29:'8aDy9_oNW00',
+ 32:'N0MYDK63sGI',33:'jy74jz0DgdQ',34:'Dfc77hztSek',35:'4OTcgL56j2c',
+ 36:'q6RqSXQT3tQ',37:'etzq1io9SaQ',38:'joRf98-skiA',39:'iiYK3cNtP3w',
+ 40:'kLYEXvx78VQ',41:'JECXvCUrodI',42:'tzJlH056E50',43:'3Bj51rxD0u8',
+ 44:'15YaXo9S3hI',45:'MPLyb-Zisik',46:'MiCUx-d8lGg',47:'iZTevdzv0vA',
+ 48:'U0iAeP5KQao',49:'xykNOZL9_38',50:'lJPiSqkw3ZU',51:'YCrNGO2DTXI',
+ 52:'IdeVUlWcARg',53:'Fgm5Dcr2CEg',54:'FZ37lLwLjrU',55:'kigOmC4_VJc',
+ 56:'8TJvoSlqOCQ',57:'-ce5REBi5oI',58:'3-IyNvisOcc',59:'-MdOiPwOryg',
+ 60:'-agWU-iY4e4',61:'nAfR9HU8R0o',suzanne:'JhYZy1ugI3Q'
+};
+const flightMetrics={"0":{"level":0,"distance":2.6,"duration":4.0},"1":{"level":0,"distance":12.5,"duration":1.4},"2":{"level":0,"distance":5.5,"duration":2.5},"3":{"level":1,"distance":6.5,"duration":2.2},"4":{"level":1,"distance":null,"duration":null},"5":{"level":1,"distance":null,"duration":null},"6":{"level":1,"distance":10.2,"duration":2.0},"7":{"level":2,"distance":7.4,"duration":2.4},"8":{"level":2,"distance":null,"duration":null},"9":{"level":2,"distance":8.6,"duration":1.6},"10":{"level":1,"distance":null,"duration":null},"11":{"level":1,"distance":null,"duration":null},"12":{"level":0,"distance":5.7,"duration":2.7},"13":{"level":1,"distance":null,"duration":3.4},"14":{"level":1,"distance":5.2,"duration":1.1},"15":{"level":2,"distance":null,"duration":null},"16":{"level":2,"distance":null,"duration":null},"17":{"level":1,"distance":7.4,"duration":1.9},"18":{"level":3,"distance":null,"duration":2.4},"19":{"level":1,"distance":null,"duration":null},"20":{"level":1,"distance":null,"duration":null},"21":{"level":3,"distance":6.5,"duration":2.4},"22":{"level":1,"distance":6.1,"duration":1.7},"23":{"level":2,"distance":9.1,"duration":1.7},"24":{"level":2,"distance":6.4,"duration":2.0},"27":{"level":1,"distance":7.6,"duration":null},"28":{"level":3,"distance":9.8,"duration":2.3},"29":{"level":0,"distance":13.1,"duration":2.9},"32":{"level":2,"distance":14.0,"duration":2.2},"33":{"level":2,"distance":7.2,"duration":1.8},"34":{"level":2,"distance":6.5,"duration":1.3},"35":{"level":2,"distance":9.0,"duration":2.6},"36":{"level":2,"distance":9.6,"duration":3.5},"37":{"level":0,"distance":10.4,"duration":1.9},"38":{"level":0,"distance":15.7,"duration":1.7},"39":{"level":1,"distance":10.7,"duration":1.7},"40":{"level":2,"distance":null,"duration":null},"41":{"level":2,"distance":13.7,"duration":1.7},"42":{"level":1,"distance":null,"duration":null},"43":{"level":1,"distance":11.5,"duration":4.7},"44":{"level":1,"distance":7.0,"duration":2.4},"45":{"level":2,"distance":8.0,"duration":1.7},"46":{"level":0,"distance":null,"duration":null},"47":{"level":1,"distance":null,"duration":null},"48":{"level":1,"distance":8.4,"duration":1.8},"49":{"level":3,"distance":10.2,"duration":1.6},"50":{"level":0,"distance":9.5,"duration":3.0},"51":{"level":1,"distance":10.1,"duration":null},"52":{"level":3,"distance":9.5,"duration":3.6},"53":{"level":0,"distance":11.6,"duration":1.3},"54":{"level":1,"distance":null,"duration":null},"55":{"level":1,"distance":11.2,"duration":1.8},"56":{"level":3,"distance":6.0,"duration":null},"57":{"level":2,"distance":null,"duration":null},"58":{"level":0,"distance":null,"duration":null},"59":{"level":0,"distance":null,"duration":null},"60":{"level":0,"distance":null,"duration":null},"61":{"level":2,"distance":null,"duration":null}};
+const origamiRecipes={"0":{"orient":"portrait","steps":[["Сделай центральный сгиб","Положи лист А4 вертикально. Сложи его вдоль пополам, пригладь сгиб и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сложи верхние углы","Совмести верхние края по обе стороны с центральной линией.",["sym",0,-98,76,-22,68,-90]],["Закрой корпус","Сложи заготовку вдоль центральной линии так, чтобы загнутые уголки остались внутри.",["half","toward"]],["Сделай крылья","Отогни верхний внешний слой вниз к нижнему краю корпуса. Переверни и повтори симметрично. Расправь крылья.",["wings",{"style":"wide","mode":"both","keel":20}]]]},"1":{"orient":"portrait","steps":[["Наметь середину","Положи лист А4 вертикально. Сложи пополам вдоль, пригладь и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сложи верхние углы","Загни два верхних угла к центральной линии, чтобы получился острый верх.",["sym",0,-98,76,-22,68,-90]],["Сузь нос","Теперь загни к середине оба наклонных края. Следи, чтобы половины совпали.",["sym",0,-98,76,84,62,-32]],["Закрой корпус","Сложи самолётик вдоль центральной линии, оставив загнутые слои внутри.",["half","toward"]],["Отогни крылья","Отогни край одного крыла к нижней кромке корпуса. Переверни, повтори с другим крылом и слегка раскрой оба.",["wings",{"style":"dart","mode":"both","keel":18}]]]},"2":{"orient":"portrait","steps":[["Наметь середину","Сложи вертикальный лист А4 вдоль пополам и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Загни уголки","Сведи верхние углы к центральному сгибу.",["sym",0,-98,76,-22,68,-90]],["Опусти остриё","Отогни большой верхний треугольник вниз по линии основания.",["fold",-76,-22,76,-22,0,-85]],["Сведи углы","Подведи верхние уголки к середине так, чтобы их концы были примерно на 2,5 см выше нижней вершины треугольника.",["sym",0,-22,76,36,68,-16]],["Запри сгибы","Подними оставшийся маленький треугольник поверх двух уголков.",["fold",-26,32,26,32,0,48]],["Сложи корпус","Сложи заготовку вдоль пополам от себя, оставив фиксирующий треугольник снаружи.",["half","away"]],["Раскрой широкие крылья","Отогни обе стороны симметрично, оставив центральную часть как ручку. Расправь крылья.",["wings",{"style":"wide","mode":"both","keel":20}]]]},"suzanne":{"orient":"portrait","steps":[["Наметь крест","На вертикальном листе А4 совмести верхнюю кромку с левой длинной стороной и разверни. Повтори вправо.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Загни верхние части боковин","Подведи каждый верхний боковой край к ближайшей диагонали, не доходя до неё примерно на 1,5 мм.",["sym",0,-98,76,54,70,-45]],["Опусти нос","Отогни верхушку к себе по горизонтальной линии через точку пересечения диагоналей.",["fold",-76,-22,76,-22,0,-85]],["Сведи верхние створки","Загни по очереди левую и правую верхние створки так, чтобы они встретились на продольной оси.",["sym",0,-22,76,58,68,-14]],["Сложи корпус","Переверни заготовку и сложи её пополам вдоль оси, оставив верхние сгибы снаружи. Поверни заготовку на четверть оборота осью вниз.",["half","away"]],["Сложи и раскрой крылья","Подведи согнутый край крыла к оси корпуса, не прижимая сгиба. Опусти крыло ещё немного: спрячется маленький белый треугольник. Прижми сгиб, повтори зеркально и раскрой крылья.",["wings",{"style":"stealth","mode":"both","keel":20,"dihedral":0.6}]]]},"3":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Согни верхние углы","Разверни лист и согни верхние углы к центральной линии.",["sym",0,-98,76,-22,68,-90]],["Опусти верхний кончик","Согни верхний кончик вниз до края предыдущего сгиба.",["fold",-76,-22,76,-22,0,-85]],["Согни верхние стороны","Согни верхние стороны к центральной линии.",["sym",0,-22,76,52,68,-14]],["Согни верх от себя","Согни верхнюю часть от себя примерно на 13 мм.",["fold",-76,-8,76,-8,0,-20,{"mountain":true}]],["Сложи самолёт к себе","Сложи самолёт пополам к себе.",["half","toward"]],["Разверни крылья","Отогни оба клапана наружу, чтобы сформировать крылья. Высота корпуса будет около 13 мм.",["wings",{"style":"wide","mode":"both","keel":16}]]]},"4":{"orient":"portrait","steps":[["Сложи лист по диагонали","Сложи лист по диагонали, совместив противоположные углы.",["fold",-76,-76,76,76,68,-88]],["Подогни длинный край","Подогни длинный край примерно на 19 мм.",["fold",-70,-56,70,84,-40,20]],["Сложи и поверни лист","Сложи лист пополам к себе, затем поверни его так, чтобы самая толстая часть была сверху, а срезанный угол — слева.",["half","toward"]],["Сложи правую сторону","Загни правую сторону поверх левой, совмести их и сделай вертикальный сгиб.",["fold",-12,-80,-12,80,32,0]],["Сложи другую сторону","Опусти другую сторону, совместив противоположные стороны.",["fold",12,-80,12,80,-32,0]],["Сформируй первое крыло","Опусти один наружный клапан, чтобы сформировать первое крыло. Высота корпуса будет около 19 мм.",["wings",{"style":"dart","mode":"one","keel":20}]],["Сформируй второе крыло","Опусти второй клапан, чтобы завершить самолёт.",["wings",{"style":"dart","mode":"both","keel":20}]]]},"5":{"orient":"portrait","steps":[["Сложи лист по диагонали","Сложи лист по диагонали.",["fold",-76,-98,76,54,68,-90]],["Отрежь лишнюю часть","Отрежь лишнюю часть снизу.",["cut",{"kind":"strip_bottom","y":54}]],["Подогни закрытый край","Подогни закрытый край примерно на 2,5 см.",["fold",-62,-56,62,68,-32,16]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Согни верхний край","Согни один из верхних краёв, сверяясь с рисунком.",["fold",-26,-70,36,50,28,-40,{"scope":"top"}]],["Повтори сгиб","Повтори сгиб с другой стороны.",["fold",-26,-70,36,50,28,-40,{"mountain":true}]],["Разверни первое крыло","Отогни одну сторону наружу, чтобы сформировать первое крыло.",["wings",{"style":"wide","mode":"one","keel":20}]],["Заверши сборку самолёта","Отогни наружу другую сторону, чтобы завершить самолёт. Прикрепи к носу несколько скоб или скрепку, чтобы утяжелить кончик.",["wings",{"style":"wide","mode":"both","keel":20}]]]},"6":{"orient":"portrait","steps":[["Наметь середину","Сложи лист пополам, затем разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Загни верхний край","Загни верхний край вниз примерно на 5 см.",["fold",-76,-56,76,-56,0,-90]],["Удвой сгиб","Ещё раз загни верхний край вниз, удвоив толщину сложенной части.",["fold",-76,-34,76,-34,0,-52]],["Повтори загиб","Повтори предыдущий загиб ещё один раз.",["fold",-76,-16,76,-16,0,-30]],["Загни верхние углы","Загни верхние углы от себя к задней центральной линии.",["sym",0,-16,76,48,68,-10,{"mountain":true}]],["Сложи самолёт","Сложи самолёт пополам к себе.",["half","toward"]],["Сформируй крылья","Загни обе стороны вниз, формируя крылья, затем отогни кончики крыльев вверх. Высота корпуса должна быть около 15 мм.",["wings",{"style":"blunt","mode":"both","winglets":1,"keel":18}]]]},"7":{"orient":"portrait","steps":[["Наметь середину","Сложи лист пополам, затем разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сведи верхние углы","Загни два верхних угла к центральной линии.",["sym",0,-98,76,-22,68,-90]],["Сложи верхние стороны","Загни верхние стороны к центральной линии.",["sym",0,-98,76,84,62,-32]],["Опусти верхний кончик","Загни верхний кончик вниз, к нижнему краю листа.",["fold",-76,0,76,0,0,-80]],["Подними кончик","Загни кончик обратно вверх примерно на 5,5 см выше верхнего края.",["fold",-76,26,76,26,0,82]],["Опусти кончик снова","Загни кончик обратно вниз, к краю предыдущего сгиба.",["fold",-76,2,76,2,0,-28]],["Сложи самолёт","Сложи бумажный самолёт пополам к себе.",["half","toward"]],["Сформируй крылья","Загни обе стороны вниз, формируя крылья.",["wings",{"style":"wide","mode":"both","keel":20}]]]},"8":{"orient":"landscape","steps":[["Наметь середину","Держа лист горизонтально, сложи его пополам и разверни.",["fold",0,-76,0,76,70,0,{"creaseOnly":true}]],["Загни правый угол","Загни верхний правый угол вниз до конца намеченного сгиба.",["fold",0,-76,98,22,88,-68]],["Повтори сгиб","Раскрой последний сгиб и повтори его с другой стороны, чтобы получить показанные линии.",["fold",0,-76,-98,22,-88,-68,{"unfoldPrev":true,"creaseOnly":true}]],["Сложи гармошкой","Сложи два угла внутрь, а центральную часть наружу, формируя ромб.",["waterbomb",12]],["Подними передние клапаны","Загни вверх два передних клапана.",["sym",0,12,44,-32,42,6,{"scope":"top"}]],["Загни задние клапаны","Продолжи, загнув два клапана за верхний край.",["sym",0,-32,44,12,36,-24,{"mountain":true,"scope":"upper"}]],["Отогни верхнюю половину","Отогни всю верхнюю половину самолёта от себя. Кончик может касаться противоположного края, но для лучшего полёта оставь небольшой зазор.",["fold",-98,12,98,12,0,-45,{"mountain":true}]],["Сложи самолёт","Сложи бумажный самолёт пополам.",["half","toward"]],["Сформируй крылья","Отогни обе стороны, формируя крылья. Высота корпуса должна быть 1,5 см.",["wings",{"style":"stealth","mode":"both","keel":18}]],["Подогни и надрежь крылья","Отогни кончики крыльев вверх, затем сделай по два небольших надреза у заднего края каждого крыла, как на рисунке.",["wings",{"style":"stealth","mode":"both","winglets":1,"slits":true,"keel":18}]]]},"9":{"orient":"portrait","steps":[["Сложи лист","Сложи лист пополам.",["fold",0,-98,0,98,60,0]],["Загни правый угол","Загни правый угол вниз к нижнему центру левого прямоугольника. Если используешь лист A4, остановись за 2 см до нижнего края.",["fold",-76,-98,0,68,-8,-88]],["Повтори сгиб","Разверни лист и повтори сгиб другим углом, чтобы получить показанные линии.",["unfold",0]],["Сложи середину гармошкой","Снова раскрой лист и сложи центральную часть внутрь гармошкой.",["waterbomb",-18]],["Сведи внешние клапаны","Загни внешние клапаны к центральной линии.",["sym",0,-98,42,-18,66,-24,{"scope":"top"}]],["Подними центральную часть","Загни центральную часть вверх, как на рисунке.",["fold",-36,-34,36,-34,0,-18,{"scope":"upper"}]],["Подверни внешние концы","Дважды загни внешние концы внутрь, чтобы они оказались заправлены.",["sym",18,-98,32,-18,40,-36,{"tuck":true,"scope":"upper"}]],["Сложи самолёт","Сложи самолёт пополам к себе.",["half","toward"]],["Разверни крылья","Разверни края, чтобы завершить самолёт. При желании выполни декоративную складку-кринкл, как на рисунке.",["wings",{"style":"stealth","mode":"both","winglets":1,"keel":18}]]]},"10":{"orient":"portrait","steps":[["Сложи и отрежь","Сложи лист по диагонали, как на рисунке. Отрежь нижнюю часть, чтобы получился квадрат; сохрани отрезанную часть.",["cut",{"kind":"strip_bottom","y":54}]],["Наметь крест","Загни левый угол к противоположному углу и разверни, чтобы получить сгиб крест-накрест.",["sym",-76,-76,76,76,68,-68,{"creaseOnly":true}]],["Сложи стороны","Сложи стороны внутрь гармошкой, формируя треугольник.",["diamond_collapse",12]],["Подними нижние углы","Загни оба нижних угла к верхнему кончику.",["sym",0,-72,38,12,62,6,{"scope":"top"}]],["Сделай стрелку","Возьми отрезанную часть и загни её верхние углы к центру, формируя стрелку.",["custom",[{"poly":[[0,-72],[72,12],[-72,12]],"shade":1},{"poly":[[0,-20],[22,24],[22,92],[-22,92],[-22,24]],"shade":0,"creases":[[[0,-20],[0,92]]]}],[0,76,0,26]]],["Вставь стрелку","Полностью вставь стрелку в корпус самолёта.",["custom",[{"poly":[[0,-72],[72,12],[-72,12]],"shade":1},{"poly":[[-18,12],[18,12],[18,86],[-18,86]],"shade":0,"creases":[[[0,12],[0,86]]]},{"poly":[[0,-72],[36,12],[-36,12]],"shade":2}],[0,64,0,12]]],["Опусти кончик","Загни кончик самолёта вниз, чтобы закрепить внутреннюю стрелку.",["fold",-42,-38,42,-38,0,-68]],["Заправь клапаны","Заправь оба центральных клапана под верхнюю часть, затем слегка наметь сгиб самолёта пополам.",["fold",0,-40,0,86,48,0,{"creaseOnly":true}]]]},"11":{"orient":"portrait","steps":[["Наметь четыре части","Сложи лист пополам в обоих направлениях, разделив его на четыре равных прямоугольника. Разверни.",["sym",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сведи верхние углы","Загни верхние углы к центральной горизонтальной линии.",["sym",0,-98,76,-22,68,-90]],["Опусти верхний кончик","Загни верхний кончик вниз, к нижнему краю.",["fold",-76,0,76,0,0,-86]],["Загни углы вниз","Загни верхние углы к нижнему краю с каждой стороны.",["sym",0,0,76,76,68,8]],["Сложи самолёт","Сложи самолёт пополам к себе.",["half","toward"]],["Сформируй крылья","Отогни обе стороны, формируя крылья. Высота корпуса должна быть около 2 см.",["wings",{"style":"wide","mode":"both","keel":20}]],["Подними кончики","Отогни кончики крыльев вверх примерно на 1,3 см.",["wings",{"style":"wide","mode":"both","winglets":1,"keel":20}]]]},"12":{"orient":"portrait","steps":[["Сложи лист дважды","Сложи лист пополам, затем ещё раз пополам.",["fold",0,-98,0,98,60,0]],["Разверни и отметь точку","Разверни предыдущие сгибы. Отметь точку примерно в 10 см от верхнего края и согни лист вниз по этой отметке.",["unfold",0]],["Согни верхние углы","Согни оба верхних угла к ближайшей складке.",["fold",-76,-26,76,-26,0,-88]],["Спрячь углы гармошкой","Разверни углы, затем сложи их гармошкой внутрь.",["sym",0,-26,76,36,68,-20]],["Сведи внешние клапаны","Согни оба внешних клапана к центральной линии.",["sym",0,-26,44,98,66,20]],["Сложи самолёт пополам","Сложи самолёт пополам к себе.",["half","toward"]],["Спрячь верхний кончик","Сложи верхний кончик гармошкой внутрь, сверяясь с рисунком.",["fold",-20,-26,26,16,-18,-22]],["Отогни крылья","Отогни оба крыла в стороны.",["wings",{"style":"blunt","mode":"both","keel":20}]]]},"13":{"orient":"portrait","steps":[["Скругли нижний угол","Сложи лист пополам. Вырежи нижний угол, скруглив его по рисунку, затем разверни лист.",["cut",{"kind":"round_bottom"}]],["Согни углы к центру","Согни верхние углы к центральной линии.",["sym",0,-98,76,-22,68,-90]],["Опусти верхний кончик","Согни верхний кончик вниз, оставив до нижнего края 5 см.",["fold",-76,-12,76,-12,0,-88]],["Опусти верхние углы","Согни вниз оба верхних угла примерно до середины каждой диагональной складки.",["sym",0,-12,76,44,68,-6]],["Опусти верхний край","Согни верхний край вниз на 2,5 см.",["fold",-76,8,76,8,0,-10]],["Сложи самолёт пополам","Сложи самолёт пополам к себе.",["half","toward"]],["Отогни длинные крылья","Отогни стороны наружу, сформировав длинные округлые крылья. Высота корпуса — 13 мм.",["wings",{"style":"round","mode":"both","keel":16}]]]},"14":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам, совместив верхний край с нижним.",["fold",-76,0,76,0,0,-80]],["Сделай поперечный сгиб","Сложи лист пополам в другом направлении, наметь складку и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Согни верхние углы","Согни верхние углы к центральной линии так, чтобы складки доходили до нижних углов.",["sym",0,0,76,98,68,12]],["Разверни и спрячь углы","Разверни сгиб из предыдущего шага и сложи углы гармошкой внутрь.",["waterbomb",72]],["Сведи углы к центру","Согни верхние углы к центральной линии.",["sym",0,0,38,72,62,66,{"scope":"top"}]],["Отогни кончик назад","Отогни кончик назад примерно на 2,5 см.",["fold",-42,22,42,22,0,4,{"mountain":true}]],["Сложи самолёт пополам","Сложи самолёт пополам к себе.",["half","toward"]],["Сформируй крылья","Отогни стороны в стороны, сформировав крылья. Высота корпуса спереди — около 2 см, сзади — около 3 см.",["wings",{"style":"stealth","mode":"both","keel":22}]],["Подогни кончики крыльев","Подогни кончики крыльев вверх или вниз, сформировав стабилизаторы.",["wings",{"style":"stealth","mode":"both","winglets":1,"keel":22}]]]},"15":{"orient":"portrait","steps":[["Наметь крест сгибами","Согни углы вниз в разные стороны, затем разверни, чтобы получился крест.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Опусти верх листа","Согни верх листа вниз так, чтобы складка совпала с центром креста.",["fold",-76,-22,76,-22,0,-90,{"creaseOnly":true}]],["Согни верхние углы","Согни верхние углы к центральной линии.",["sym",0,-98,76,-22,68,-90]],["Спрячь стороны гармошкой","Разверни предыдущий сгиб, затем сложи стороны гармошкой внутрь.",["waterbomb",-22]],["Подними нижние углы","Подними нижние углы треугольника к его верхнему концу.",["sym",0,-98,38,-22,64,-26,{"scope":"top"}]],["Сведи стороны ромба","Согни верхние стороны ромба к центральной линии.",["sym",0,-98,22,-48,34,-56,{"scope":"upper"}]],["Разверни ромб","Разверни ромб, вернув лист к форме треугольника.",["waterbomb",-22]],["Сложи стороны гармошкой","Согни верхние стороны к середине, затем сложи оставшиеся части гармошкой вверх.",["sym",0,-98,32,-22,58,-28,{"scope":"upper"}]],["Спрячь кончик за выступами","Согни верх вниз примерно на 2,5 см, спрятав его за выступами.",["fold",-36,-68,36,-68,0,-92,{"tuck":true,"scope":"upper"}]],["Согни верхние стороны назад","Согни верхние стороны к задней центральной линии.",["sym",0,-68,76,12,68,-12,{"mountain":true}]],["Сложи и скрепи самолёт","Сложи самолёт пополам и отогни оба крыла. Скрепи его скобой.",["wings",{"style":"stealth","mode":"both","keel":18}]]]},"16":{"orient":"portrait","steps":[["Наметь крест сгибами","Согни углы вниз в разные стороны, затем разверни, чтобы получился крест.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Опусти верх листа","Согни верх листа вниз так, чтобы складка совпала с центром креста.",["fold",-76,-22,76,-22,0,-90]],["Согни верхние углы","Согни верхние углы к центральной линии.",["sym",0,-22,76,54,68,-16]],["Спрячь стороны гармошкой","Разверни предыдущий сгиб, затем спрячь стороны внутрь гармошкой.",["waterbomb",26]],["Согни нижний слой","Согни внутрь боковые части нижнего слоя так, чтобы складка проходила точно через нижние углы.",["sym",0,26,76,98,68,36]],["Сложи треугольник туда-обратно","Сложи большой треугольник пополам от себя, затем отогни его обратно, оставив небольшой выступ.",["fold",-56,56,56,56,0,32,{"mountain":true,"scope":"upper"}]],["Сложи самолёт пополам","Сложи самолёт пополам от себя.",["half","away"]],["Отогни крылья","Отогни стороны наружу, сформировав крылья. Высота корпуса — около 2 см.",["wings",{"style":"wide","mode":"both","keel":20}]]]},"17":{"orient":"portrait","steps":[["Наметь крест сгибами","Согни углы вниз в разные стороны, затем разверни, чтобы получился крест.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Опусти верх листа","Согни верх листа вниз так, чтобы складка совпала с центром креста.",["fold",-76,-22,76,-22,0,-90,{"creaseOnly":true}]],["Согни верхние углы","Согни верхние углы к центральной линии.",["sym",0,-98,76,-22,68,-90]],["Спрячь стороны гармошкой","Разверни предыдущие сгибы, затем сложи стороны гармошкой внутрь.",["waterbomb",-22]],["Подними боковые кончики","Подними левый и правый кончики к верхнему концу, сверяясь с рисунком.",["sym",0,-98,38,-22,64,-28,{"scope":"top"}]],["Опусти верх треугольника","Согни верх вниз до конца треугольника.",["fold",-56,-54,56,-54,0,-92]],["Сложи самолёт пополам","Сложи самолёт пополам к себе.",["half","toward"]],["Сформируй крылья","Отогни обе стороны, чтобы сформировать крылья. Высота корпуса — около 1,3 см.",["wings",{"style":"square","mode":"both","keel":16}]],["Вырежи клапаны на хвосте","Вырежи по два небольших клапана у хвоста каждого крыла.",["wings",{"style":"square","mode":"both","slits":true,"keel":16}]]]},"18":{"orient":"portrait","steps":[["Сложи угол по диагонали","Сложи один угол по диагонали.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Обрежь и разверни лист","Обрежь лишнюю часть снизу и разверни лист. Должен получиться квадрат.",["cut",{"kind":"strip_bottom","y":54}]],["Согни углы к центру","Поверни лист так, чтобы один угол смотрел вверх. Согни внешние углы к центральной линии.",["sym",0,-76,76,0,68,-68]],["Опусти верхний угол","Согни верхний угол вниз до горизонтальной линии.",["fold",-76,-18,76,-18,0,-68]],["Согни углы к центру","Согни два верхних угла к центральной линии.",["sym",0,-18,76,58,68,-12]],["Сложи стороны гармошкой","Разверни предыдущий сгиб, затем сложи стороны гармошкой, формируя ромб.",["diamond_collapse",12]],["Подними нижнюю часть","Согни нижнюю половину ромба вверх.",["fold",-62,12,62,12,0,62]],["Согни стороны к центру","Согни стороны верхней части к центру.",["sym",0,-72,28,12,52,-4,{"scope":"upper"}]],["Сложи самолёт пополам","Сложи самолёт пополам на себя.",["half","toward"]],["Разложи крылья","Отогни оба крыла в стороны, чтобы завершить самолёт.",["wings",{"style":"stealth","mode":"both","keel":18}]]]},"19":{"orient":"portrait","steps":[["Сложи угол по диагонали","Сложи один угол по диагонали.",["fold",-76,-98,76,54,68,-90]],["Обрежь лист до квадрата","Обрежь лишнюю часть снизу. У тебя получится сложенный пополам квадрат в форме треугольника.",["cut",{"kind":"strip_bottom","y":54}]],["Загни угол треугольника","Загни угол треугольника так, чтобы примерно треть его легла на бумагу, а две трети выступали за неё.",["fold",-36,-68,42,52,62,-56]],["Согни слой в обратную сторону","Возьми один слой и согни его в обратную сторону, как показано на рисунке.",["fold",-18,-68,28,52,54,-40,{"scope":"top"}]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Подними одно крыло","Согни одно крыло вверх от носа самолёта к центру хвоста.",["wings",{"style":"swallow","mode":"one","keel":18}]],["Подними второе крыло","Повтори предыдущий сгиб с другим крылом.",["wings",{"style":"swallow","mode":"both","keel":18}]],["Спрячь хвост гармошкой","Сложи хвост гармошкой и заправь внутрь. Подбери подходящий угол сгиба.",["wings",{"style":"swallow","mode":"both","dihedral":0.5,"keel":18}]],["Отогни оба крыла","Отогни одно крыло, затем повтори с другим.",["wings",{"style":"swallow","mode":"both","dihedral":0.8,"keel":18}]],["Добавь клюв или перья","По желанию сложи нос гармошкой, чтобы сделать клюв, или прорежь щели на задней части каждого крыла, чтобы сделать перья.",["wings",{"style":"swallow","mode":"both","dihedral":0.8,"slits":true,"keel":18}]]]},"20":{"orient":"portrait","steps":[["Сложи угол по диагонали","Сложи один угол по диагонали.",["fold",-76,-98,76,54,68,-90]],["Обрежь лист до квадрата","Обрежь лишнюю часть снизу. У тебя получится сложенный пополам квадрат в форме треугольника.",["cut",{"kind":"strip_bottom","y":54}]],["Загни угол треугольника","Загни угол треугольника так, чтобы примерно треть его легла на бумагу, а две трети выступали за неё.",["fold",-36,-68,42,52,62,-56]],["Согни слой в обратную сторону","Возьми один слой и согни его в обратную сторону, как показано на рисунке.",["fold",-18,-68,28,52,54,-40,{"scope":"top"}]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Подними крыло под углом","Согни одно крыло вверх под небольшим углом.",["wings",{"style":"wide","mode":"one","keel":20}]],["Подними второе крыло","Повтори предыдущий сгиб с другим крылом.",["wings",{"style":"wide","mode":"both","keel":20}]],["Согни крылья и голову","Опусти оба крыла, затем сложи голову гармошкой внутрь, чтобы получился клюв.",["wings",{"style":"wide","mode":"both","dihedral":0.7,"winglets":0.5,"keel":20}]]]},"21":{"orient":"landscape","steps":[["Согни верхний край","Держа лист широкой стороной к себе, согни верхний край вниз примерно на 5 см.",["fold",-98,-42,98,-42,0,-70]],["Сложи лист вертикально","Сложи лист пополам по вертикали.",["fold",0,-76,0,76,70,0]],["Согни правый угол","Согни верхний правый угол вниз к левому краю.",["fold",0,-42,-76,34,-12,-38,{"scope":"top"}]],["Согни левый угол","Повтори сгиб с другой стороны, направив угол в противоположную сторону.",["fold",0,-42,-76,34,-12,-38,{"mountain":true}]],["Разверни лист","Разверни лист до состояния после первого шага.",["unfold",1]],["Сложи верх гармошкой","Сложи верхние стороны гармошкой, как показано на рисунке.",["waterbomb",26]],["Заправь нижние клапаны","Подними нижние клапаны и заправь их под треугольник.",["fold",-48,26,48,26,0,68,{"tuck":true}]],["Согни верхний угол назад","Согни верхний угол назад к нижнему краю листа.",["fold",-80,14,80,14,0,-34,{"mountain":true}]],["Подогни стороны треугольника","Переверни лист и подогни стороны перевёрнутого треугольника.",["flip","x"]],["Сложи стороны гармошкой","Сложи стороны гармошкой, как показано на рисунке.",["sym",0,14,48,76,72,24]],["Сложи самолёт пополам","Сложи самолёт пополам от себя.",["half","away"]],["Опусти крылья","Опусти одно крыло, как показано на рисунке, затем повтори с другой стороны.",["wings",{"style":"dart","mode":"both","keel":18}]],["Подними кончики крыльев","Подними кончики крыльев.",["wings",{"style":"dart","mode":"both","winglets":1,"keel":18}]]]},"22":{"orient":"portrait","steps":[["Согни и разогни углы","Согни углы вниз в стороны, затем разогни.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Согни верх по линиям","Согни верх вниз так, чтобы совпали три линии сгиба.",["fold",-76,-22,76,-22,0,-90,{"creaseOnly":true}]],["Сложи стороны гармошкой","Разверни лист и сложи стороны внутрь гармошкой.",["waterbomb",-22]],["Согни края треугольника","Согни оба края треугольника к центру, только верхний слой.",["sym",0,-98,38,-22,64,-28,{"scope":"top"}]],["Отогни верх назад","Отогни верх назад до нижнего края противоположной стороны. Если используешь лист A4, остановись примерно за 2 см до нижнего края.",["fold",-76,-18,76,-18,0,-90,{"mountain":true}]],["Подними средние клапаны","Подними оба средних клапана вверх.",["sym",0,-56,36,-18,28,-22,{"scope":"upper"}]],["Сложи самолёт пополам","Сложи самолёт пополам от себя.",["half","away"]],["Опусти крылья","Опусти одно крыло, как показано на рисунке, затем повтори с другим.",["wings",{"style":"stealth","mode":"both","keel":18}]],["Подними кончики крыльев","По желанию подними кончики обоих крыльев и/или прорежь по две щели на задней части каждого крыла.",["wings",{"style":"stealth","mode":"both","winglets":1,"slits":true,"keel":18}]]]},"23":{"orient":"portrait","steps":[["Согни угол на другую сторону","Согни угол к противоположной стороне листа.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Повтори сгиб угла","Разогни угол, повтори сгиб с другим углом и снова разогни.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Сложи стороны внутрь","По линиям предыдущих сгибов сложи стороны внутрь гармошкой.",["waterbomb",-22]],["Подними верхние углы","Подними верхний слой боковых углов к верхнему краю.",["sym",0,-98,38,-22,64,-28,{"scope":"top"}]],["Согни края к центру","Согни оба внешних края к центру и заправь их под ромб.",["sym",24,-98,24,98,68,20,{"tuck":true}]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Опусти крылья","Согни одно крыло вниз от носа к центру хвоста, затем повтори с другой стороны.",["wings",{"style":"dart","mode":"both","keel":18}]],["Опусти передние мини-крылья","Опусти передние мини-крылья, чтобы завершить модель.",["wings",{"style":"canard","mode":"both","keel":18}]]]},"24":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам по вертикали. Разверни его и загни оба верхних угла к середине.",["sym",0,-98,76,-22,68,-90]],["Загни верхний край","С одной стороны опусти верхний край к нижнему краю.",["fold",0,-98,76,42,68,-24]],["Повтори сгиб с другой стороны","Разверни сгиб и повтори сгиб из шага 2 с другой стороны, чтобы получить складки, как на рисунке.",["fold",0,-98,-76,42,-68,-24]],["Сложи верх и стороны","Опусти верхнюю часть и одновременно сложи боковые стороны гармошкой.",["waterbomb",-12]],["Подними треугольник","Отогни нижнюю треугольную часть вверх.",["fold",-48,-12,48,-12,0,24,{"scope":"upper"}]],["Загни внешние углы","Загни назад оба внешних угла треугольника. Заправь сгибы между слоями бумаги.",["sym",0,-88,28,-12,56,-18,{"mountain":true,"scope":"upper"}]],["Сложи самолёт пополам","Сложи бумажный самолёт пополам от себя.",["half","away"]],["Сложи крылья вниз","Опусти одно крыло, затем повтори с другим.",["wings",{"style":"dart","mode":"both","keel":18}]],["Подогни законцовки","Подогни вверх края каждой законцовки крыла под углом.",["wings",{"style":"dart","mode":"both","winglets":1,"keel":18}]]]},"27":{"orient":"landscape","steps":[["Разметь сгибы","Сложи лист пополам по вертикали и горизонтали, затем разверни.",["sym",0,-76,0,76,70,0,{"creaseOnly":true}]],["Опусти верхний край","Сложи верхний край вниз к центральной складке.",["fold",-98,-38,98,-38,0,-70]],["Сложи по центру","Опусти верхний край, загнув его по центральной складке.",["fold",-98,0,98,0,0,-32]],["Загни правый угол","Перегни верхний правый угол вниз к центральной складке, как на рисунке.",["fold",0,0,76,76,88,8]],["Загни левый угол","Повтори с левой стороны.",["fold",0,0,-76,76,-88,8]],["Сложи угол к горизонтали","Ещё раз загни угол вниз к горизонтальной складке.",["fold",0,0,42,76,56,68,{"scope":"top"}]],["Повтори с другой стороны","Повтори шаг 6 с другой стороны.",["fold",0,0,-42,76,-56,68,{"scope":"top"}]],["Опусти верхнюю вершину","Опусти верхнюю вершину к горизонтальной складке.",["fold",-60,38,60,38,0,6]],["Сложи самолёт пополам","Сложи самолёт пополам от себя.",["half","away"]],["Разверни первое крыло","Отогни одно крыло, оставив для корпуса около 2,5 см.",["wings",{"style":"wide","mode":"one","keel":22}]],["Разверни второе крыло","Опусти второе крыло, совместив его с первым.",["wings",{"style":"wide","mode":"both","keel":22}]]]},"28":{"orient":"portrait","steps":[["Загни правый угол","Загни верхний правый угол к левому краю.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Повтори сгиб слева","Разверни лист и повтори сгиб с левым углом.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Сложи стороны гармошкой","Разверни лист и сложи обе стороны гармошкой к середине.",["waterbomb",-22]],["Подними правый угол","Подними нижний правый угол треугольника к верхней вершине.",["fold",0,-98,38,-22,64,-26,{"scope":"top"}]],["Подними левый угол","Повтори с левым углом.",["fold",0,-98,-38,-22,-64,-26,{"scope":"top"}]],["Загни правый край","Загни нижний правый край ромба к центральной линии.",["fold",0,-22,38,-60,28,-34,{"scope":"top"}]],["Загни левый край","Повтори с левой стороны.",["fold",0,-22,-38,-60,-28,-34,{"scope":"top"}]],["Опусти верхнюю вершину","Опусти верхнюю вершину бумажного самолёта.",["fold",-36,-62,36,-62,0,-92,{"scope":"upper"}]],["Заправь нижние углы","Раскрой прорези в верхнем треугольнике и заправь внутрь углы нижних частей.",["fold",-28,-42,28,-42,0,-26,{"tuck":true,"scope":"upper"}]],["Переверни самолёт","Переверни самолёт на другую сторону.",["flip","x"]],["Загни правую сторону","Загни правую сторону, совместив верхний и нижний углы. Для ровного сгиба воспользуйся линейкой.",["fold",28,-98,28,98,68,0]],["Повтори слева","Повтори сгиб с другой стороны.",["fold",-28,-98,-28,98,-68,0]],["Отогни части наружу","Отогни эти части обратно к внешним краям, как на рисунке.",["sym",14,-98,14,98,-4,40,{"scope":"upper"}]],["Сложи самолёт к себе","Сложи бумажный самолёт пополам к себе.",["half","toward"]],["Заправь хвост","Сложи хвост и заправь его внутрь самолёта.",["fold",-18,56,24,88,18,82]],["Отогни первое крыло","Отогни одно крыло.",["wings",{"style":"stealth","mode":"one","keel":18}]],["Разверни оба крыла","Повтори с другой стороны и расправь крылья.",["wings",{"style":"stealth","mode":"both","keel":18}]]]},"29":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Загни верхние углы","Загни оба верхних угла к центральной линии.",["sym",0,-98,76,-22,68,-90]],["Опусти верхнюю вершину","Опусти верхнюю вершину, оставив до нижнего края около 2,5 см.",["fold",-76,-16,76,-16,0,-88]],["Снова загни углы","Загни оба угла к центральной линии.",["sym",0,-16,76,44,68,-10]],["Подними фиксатор","Подними маленький нижний треугольник, чтобы закрепить оба клапана.",["fold",-26,38,26,38,0,56]],["Сложи самолёт пополам","Сложи самолёт пополам от себя.",["half","away"]],["Сложи первое крыло","Опусти одно крыло, оставив для корпуса около 2,5 см.",["wings",{"style":"wide","mode":"one","keel":20}]],["Сложи второе крыло","Повтори с другим крылом.",["wings",{"style":"wide","mode":"both","keel":20}]],["Подогни законцовки","Подогни кончики крыльев вверх.",["wings",{"style":"wide","mode":"both","winglets":1,"keel":20}]],["Надрежь крылья","Ножницами сделай по две небольшие прорези у заднего края каждого крыла.",["wings",{"style":"wide","mode":"both","winglets":1,"slits":true,"keel":20}]]]},"32":{"orient":"portrait","steps":[["Загни верхний угол","Загни верхний правый угол по диагонали к противоположной стороне.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Повтори с другой стороны","Разверни лист и повтори с другой стороной.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Сложи верх к кресту","Опусти верх листа, совместив сгиб с центральной частью креста.",["fold",-76,-22,76,-22,0,-90]],["Разверни лист","Разверни лист и расправь его.",["unfold",0]],["Опусти верхний край","Сложи верхний край вниз до первой горизонтальной складки.",["fold",-76,-60,76,-60,0,-92]],["Сложи верх ещё раз","Ещё раз опусти верхнюю часть по горизонтальной складке.",["fold",-76,-22,76,-22,0,-56]],["Сложи края к диагоналям","Загни верхний внешний край к диагональной складке. Повтори с другой стороны.",["sym",0,-22,76,54,68,-16]],["Сформируй нос самолёта","Загни верхние края по диагональным линиям, чтобы сформировать нос самолёта.",["sym",0,-22,48,98,68,20]],["Опусти нос","Опусти вершину, как на рисунке.",["fold",-44,18,44,18,0,-18]],["Отмерь и соедини точки","На верхнем крае отмерь от центра по 1,6 см влево и вправо. От нижней центральной точки отмерь 2,5 см и соедини точки.",["mark",[[[-14,-22],[0,76]],[[14,-22],[0,76]]]]],["Сложи по линиям","Сложи самолёт пополам, затем загни по размеченным линиям. Если не хочешь отмерять расстояния, воспользуйся распечатанной инструкцией.",["half","toward"]],["Разметь складки гармошки","От верхнего внешнего угла отмерь 3,1 см, затем ещё 3,1 см. Отмерь 2,5 см от нижней точки вертикальной линии, затем ещё 2,5 см от этой точки.",["mark",[[[-16,-60],[18,70]],[[8,-60],[34,70]]]]],["Сложи гармошкой","Согни по линиям, чередуя направление сгибов, чтобы получилась гармошка.",["wings",{"style":"stealth","mode":"both","dihedral":0.9,"winglets":0.6,"keel":20}]],["Закрепи нос скотчем","Закрепи нос бумажного самолёта скотчем.",["wings",{"style":"stealth","mode":"both","dihedral":0.9,"winglets":1,"keel":20}]]]},"33":{"orient":"portrait","steps":[["Сложи лист крест-накрест","Сложи лист пополам по вертикали и горизонтали.",["sym",0,-98,0,98,60,0,{"creaseOnly":true}]],["Опусти верхний край","Опусти верхний край к центральной складке.",["fold",-76,-48,76,-48,0,-90]],["Снова сложи верх","Ещё раз загни верхний край к центру.",["fold",-76,-16,76,-16,0,-44]],["Повтори сгиб","Повтори предыдущий сгиб ещё раз.",["fold",-76,12,76,12,0,-12]],["Начерти вертикали","Отмерь по 2,5 см влево и вправо от центральной линии и начерти вертикальные линии.",["mark",[[[-22,12],[-22,98]],[[22,12],[22,98]]]]],["Начерти горизонталь","Отмерь по 7,6 см от нижнего края с обеих сторон и начерти горизонтальную линию.",["mark",[[[-76,36],[76,36]]]]],["Разметь линии хвоста","Отмерь 3,8 см внутрь от горизонтальной линии и начерти вертикальные линии до нижнего края.",["mark",[[[-48,36],[-48,98]],[[48,36],[48,98]]]]],["Соедини точки","Соедини две точки, как на рисунке.",["mark",[[[-48,36],[-22,12]],[[48,36],[22,12]]]]],["Вырежи детали хвоста","Вырежи фигуры, оставив только эти две заострённые детали для хвоста.",["cut",{"kind":"crown"}]],["Сложи и надрежь самолёт","Сложи самолёт пополам к себе и разрежь по пунктирной линии, отступив от угла примерно 1,3 см.",["half","toward"]],["Разверни крылья","Отогни крылья по линиям, как на рисунке, и подними тонкий хвостовой стабилизатор.",["wings",{"style":"swallow","mode":"both","keel":16}]],["Закрепи нос и крылья","Приклей или прикрепи скотчем нос самолёта и оба конца крыльев.",["wings",{"style":"swallow","mode":"both","winglets":0.5,"keel":16}]]]},"34":{"orient":"portrait","steps":[["Отмерь и проведи линию","Отмерь от верхнего края вниз около 6,3 см и проведи горизонтальную линию.",["mark",[[[-76,-46],[76,-46]]]]],["Дважды загни край","Загни верхний край до линии, затем ещё раз загни его по этой линии.",["fold",-76,-46,76,-46,0,-90]],["Сложи плоскость пополам","Сложи плоскость пополам от себя.",["half","away"]],["Загни правый угол","Загни верхний правый угол вниз вдоль противоположного края.",["fold",-38,-46,38,30,32,-40]],["Переверни и повтори","Переверни плоскость и повтори сгиб с другой стороны.",["flip","x"]],["Разверни и согни углы","Разверни всё до положения после второго шага. Затем согни верхние углы так, чтобы они совпали с диагональными сгибами.",["unfold",2]],["Согни углы к центру","Ещё раз загни верхние углы внутрь по сгибам, к центру.",["sym",0,-46,76,30,68,-40]],["Загни верх вниз","Загни верх вниз до нижнего края. Если используешь бумагу A4, оставь 2,5 см между остриём и нижним краем.",["fold",-76,16,76,16,0,-42]],["Отогни остриё вверх","Отогни остриё назад вверх, как показано.",["fold",-42,34,42,34,0,66]],["Согни наружные края","Согни верхние наружные края вдоль обеих сторон треугольника.",["sym",0,16,56,98,70,30]],["Увеличь изображение","Нажми на изображение выше, чтобы увеличить его, и с помощью линейки перенеси размеры линий сгиба. Если линейки нет, оцени расстояния на глаз.",["mark",[[[-16,16],[-24,98]],[[16,16],[24,98]]]]],["Сложи плоскость пополам","Сложи бумажную плоскость пополам.",["half","toward"]],["Отогни крылья","Отогни крылья по линиям.",["wings",{"style":"stealth","mode":"both","keel":20}]],["Закрепи нос","Скрепи нос плоскости скотчем, клеем или скобой.",["wings",{"style":"stealth","mode":"both","dihedral":0.6,"keel":20}]]]},"35":{"orient":"landscape","steps":[["Сложи и разверни лист","Держа лист горизонтально, сложи его пополам, затем разверни.",["fold",0,-76,0,76,70,0,{"creaseOnly":true}]],["Загни верхние углы","Загни оба верхних угла к центру.",["sym",0,-76,98,22,88,-68]],["Опусти остриё","Опусти остриё плоскости до предыдущего сгиба. Если используешь бумагу A4, согни его только до половины расстояния до предыдущих сгибов.",["fold",-98,-16,98,-16,0,-70]],["Загни правый угол","Загни верхний правый угол вниз, совместив его с центром.",["fold",0,-16,98,62,88,-10]],["Загни левый угол","Повтори с левым углом.",["fold",0,-16,-98,62,-88,-10]],["Переверни плоскость","Переверни плоскость и загни правый нижний угол к центру.",["fold",0,76,68,8,88,68]],["Повтори с другой стороны","Повтори с другой стороны.",["fold",0,76,-68,8,-88,68]],["Согни правый край","Согни правый край к центру, как показано.",["fold",28,-16,28,76,78,30]],["Согни левый край","Повтори с левым краем.",["fold",-28,-16,-28,76,-78,30]],["Сложи плоскость к себе","Сложи плоскость пополам к себе.",["half","toward"]],["Опусти одно крыло","Опусти одно крыло, как показано.",["wings",{"style":"wide","mode":"one","keel":20}]],["Опусти второе крыло","Повтори с другим крылом.",["wings",{"style":"wide","mode":"both","keel":20}]],["Подними хвостовые клапаны","В конце подними два хвостовых клапана.",["wings",{"style":"wide","mode":"both","winglets":1,"keel":20}]]]},"36":{"orient":"portrait","steps":[["Наметь ось","Сложи лист вдоль пополам и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сложи уголки","Согни оба верхних угла к оси.",["sym",0,-98,76,-22,68,-90]],["Подведи внешние кромки","Загни внешние наклонные кромки к оси.",["sym",0,-98,76,84,62,-32]],["Переложи правую сторону","Разверни лист. Сложи правую сторону так, чтобы её второй сгиб совпал с осью. Отогни угол обратно наружу.",["fold",28,-98,28,98,68,0]],["Повтори сгиб слева","Зеркально переложи левую сторону и отогни её угол наружу.",["fold",-28,-98,-28,98,-68,0]],["Опусти остриё","Загни верхний кончик вниз, к точке встречи остальных сгибов.",["fold",-48,-18,48,-18,0,-88]],["Подними кончик","Согни кончик назад вверх, к верхней кромке.",["fold",-36,-18,36,-18,0,32,{"scope":"top"}]],["Загни правую створку","Сложи правую наружную створку внутрь.",["fold",16,-42,16,98,24,20]],["Загни левую створку","Повтори с левой наружной створкой.",["fold",-16,-42,-16,98,-24,20]],["Раскрой правую створку","Отогни правую створку наружу так, чтобы сгиб совпал с наружным углом.",["fold",12,-42,24,98,4,20,{"scope":"top"}]],["Раскрой левую створку","Повтори этот сгиб с другой стороны.",["fold",-12,-42,-24,98,-4,20,{"scope":"top"}]],["Закрой корпус","Сложи самолётик по оси пополам от себя.",["half","away"]],["Отогни первое крыло","Опусти крыло и сверь линию сгиба с рисунком.",["wings",{"style":"canard","mode":"one","keel":18}]],["Отогни второе крыло","Сделай зеркальный сгиб на второй стороне и раскрой крылья.",["wings",{"style":"canard","mode":"both","keel":18}]]]},"37":{"orient":"portrait","steps":[["Наметь середину","Сложи лист вдоль пополам и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сведи верхние углы","Загни оба верхних угла к центральному сгибу.",["sym",0,-98,76,-22,68,-90]],["Сузь правую сторону","Подведи правую наклонную кромку к оси.",["fold",0,-98,76,84,62,-32]],["Сузь левую сторону","Повтори предыдущий сгиб слева.",["fold",0,-98,-76,84,-62,-32]],["Опусти остриё","Согни верхний кончик вниз примерно на 5 см. Сверь положение с рисунком.",["fold",-42,-36,42,-36,0,-90]],["Сложи корпус","Сложи заготовку пополам вдоль центрального сгиба.",["half","toward"]],["Отогни первое крыло","Опусти одно крыло так, чтобы его кромка совпала с центральной линией.",["wings",{"style":"dart","mode":"one","keel":18}]],["Отогни второе крыло","Повтори сгиб на второй стороне.",["wings",{"style":"dart","mode":"both","keel":18}]],["Настрой задние кончики","На одном крыле отогни задний кончик вверх, на другом вниз. Сверься с рисунком.",["wings",{"style":"dart","mode":"both","winglets":1,"keel":18}]]]},"38":{"orient":"portrait","steps":[["Сложи верхние углы","Сложи лист пополам, затем загни оба верхних угла к центру.",["sym",0,-98,76,-22,68,-90]],["Отогни верхнее остриё","Загни верхнее остриё назад примерно на 3 см.",["fold",-46,-54,46,-54,0,-92,{"mountain":true}]],["Загни верхние края","Загни оба верхних края к центральной линии.",["sym",0,-54,76,84,66,-24]],["Сложи плоскость пополам","Сложи плоскость пополам.",["half","toward"]],["Вырежи прорезь","Возьми ножницы и вырежи прорезь, как показано.",["cut",{"kind":"notch","line":[[-26,20],[-12,8]]}]],["Отогни первое крыло","Отогни первое крыло.",["wings",{"style":"dart","mode":"one","hook":true,"keel":20}]],["Отогни второе крыло","Повтори с другой стороны.",["wings",{"style":"dart","mode":"both","hook":true,"keel":20}]],["Запусти самолёт","Возьми резинку и запусти самолёт через комнату.",["wings",{"style":"dart","mode":"both","hook":true,"dihedral":0.4,"keel":20}]]]},"39":{"orient":"portrait","steps":[["Обрежь лист до квадрата","Отрежь нижнюю часть, чтобы получился ровный квадратный лист.",["cut",{"kind":"strip_bottom","y":54}]],["Сложи и разверни лист","Сложи лист пополам, затем разверни.",["fold",0,-76,0,76,60,0,{"creaseOnly":true}]],["Загни верхние углы","Загни оба верхних угла к центральной линии, как показано.",["sym",0,-76,76,0,68,-68]],["Опусти верхнее остриё","Опусти верхнее остриё до углов, загнутых на предыдущем шаге.",["fold",-76,0,76,0,0,-68]],["Загни правый угол","Снова загни верхний правый угол к центру.",["fold",0,0,76,76,68,8]],["Повтори с другой стороны","Повтори с другой стороны.",["fold",0,0,-76,76,-68,8]],["Сложи плоскость от себя","Сложи бумажную плоскость пополам от себя.",["half","away"]],["Отогни крылья","Отогни крылья. Спереди они должны сходиться в остриё, а к задней части сужаться.",["wings",{"style":"stealth","mode":"both","dihedral":0.9,"keel":18}]]]},"40":{"orient":"portrait","steps":[["Сложи лист вертикально","Сложи лист пополам по вертикали.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Разверни и сложи горизонтально","Разверни лист и сложи его пополам по горизонтали.",["fold",-76,0,76,0,0,-80]],["Согни края к центру","Держа сложенный лист раскрытым краем вниз, загни левый и правый края к центру.",["sym",38,0,38,98,68,50]],["Разверни сгибы и опусти угол","Разверни два последних сгиба, затем загни верхний угол вниз до первого сгиба.",["fold",0,0,38,38,32,4,{"unfoldPrev":true}]],["Повтори с другой стороны","Повтори с другой стороны.",["fold",0,0,-38,38,-32,4]],["Загни правый край","Загни верхний правый край к центральной линии.",["fold",0,0,38,88,34,24]],["Загни левый край","Повтори с левой стороны.",["fold",0,0,-38,88,-34,24]],["Разверни и сложи гармошкой","Разверни два последних сгиба, затем сложи правую сторону внутрь гармошкой.",["waterbomb",56]],["Повтори с другой стороны","Повтори с другой стороны.",["fold",0,0,38,56,56,52,{"scope":"top"}]],["Совмести края со сгибами","Возьми верхний слой обоих наружных краёв и совмести его с диагональными сгибами.",["fold",0,0,-38,56,-56,52,{"scope":"top"}]],["Загни края по диагоналям","Согни их внутрь ещё раз по диагональным сгибам.",["sym",0,0,26,56,34,48,{"scope":"upper"}]],["Переверни и повтори сгибы","Переверни плоскость и повтори с этой стороны сгибы из шагов 10 и 11.",["flip","x"]],["Загни остриё вниз","Загни остриё вниз примерно на 2,5 см, как показано.",["fold",-28,18,28,18,0,2]],["Сложи плоскость к себе","Сложи плоскость пополам к себе.",["half","toward"]],["Опусти одно крыло","Опусти одно крыло. Высота корпуса должна быть около 1,25 см.",["wings",{"style":"dart","mode":"one","keel":16}]],["Опусти второе крыло","Повтори с другой стороны.",["wings",{"style":"dart","mode":"both","keel":16}]],["Подними хвостовые кили","В конце подними хвостовые кили, как показано.",["wings",{"style":"dart","mode":"both","winglets":1,"keel":16}]]]},"41":{"orient":"portrait","steps":[["Сложи пополам вертикально","Сложи лист пополам по вертикали.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Разверни и сложи горизонтально","Разверни лист и сложи пополам по горизонтали.",["fold",-98,0,98,0,0,-60,{"creaseOnly":true}]],["Разверни и загни углы","Полностью разверни лист и загни два верхних угла к центру.",["sym",0,-98,76,-22,68,-90]],["Загни верхние края","Снова загни оба верхних края к центру.",["sym",0,-98,76,84,62,-32]],["Переверни и загни вершину","Переверни модель и загни верхнюю вершину к нижнему краю.",["fold",-76,6,76,6,0,-85,{"mountain":true}]],["Переверни и загни углы","Снова переверни модель и загни оба угла к центру.",["sym",0,6,76,82,68,14]],["Переверни и отогни вершину","Ещё раз переверни модель и отогни вершину вверх.",["fold",-36,36,36,36,0,78]],["Переверни и отогни клапаны","Переверни модель в последний раз и отогни центральные клапаны наружу, сверяясь с рисунком.",["sym",12,6,32,82,4,44,{"scope":"upper"}]],["Сложи самолет к себе","Сложи самолет пополам к себе.",["half","toward"]],["Отогни оба крыла","Отогни оба крыла.",["wings",{"style":"dart","mode":"both","keel":18}]]]},"42":{"orient":"portrait","steps":[["Загни правый угол","Загни верхний правый угол к левому краю.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Разверни и загни левый угол","Разверни лист и повтори сгиб с левым верхним углом.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Разверни и сложи гармошкой","Снова разверни лист и сложи обе стороны внутрь гармошкой, как на рисунке.",["waterbomb",-22]],["Загни нижний слой","Загни нижний слой к центру.",["fold",28,-22,28,98,68,40]],["Повтори слева","Повтори этот сгиб слева.",["fold",-28,-22,-28,98,-68,40]],["Загни правую сторону треугольника","Загни правую сторону треугольника к верхней вершине.",["fold",0,-98,38,-22,64,-26,{"scope":"top"}]],["Повтори слева","Повтори этот сгиб слева.",["fold",0,-98,-38,-22,-64,-26,{"scope":"top"}]],["Загни нижние края","Загни нижние края ромба вверх.",["sym",0,-22,38,-60,28,-34,{"scope":"top"}]],["Загни вершину и заправь клапаны","Загни верхнюю вершину вниз и заправь клапаны, как на рисунке.",["fold",-32,-62,32,-62,0,-92,{"tuck":true,"scope":"upper"}]],["Сложи самолет пополам","Сложи самолет пополам.",["half","toward"]],["Отогни одно крыло","Отогни одно крыло и выровняй его по центральному сгибу.",["wings",{"style":"wide","mode":"one","keel":18}]],["Повтори с другой стороны","Повтори сгиб с другой стороны.",["wings",{"style":"wide","mode":"both","keel":18}]],["Отогни кончики крыльев","Отогни кончики крыльев в противоположные стороны.",["wings",{"style":"wide","mode":"both","winglets":1,"keel":18}]]]},"43":{"orient":"portrait","steps":[["Загни правый угол","Загни верхний правый угол к левому краю.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Разверни и загни левый угол","Разверни лист и повтори сгиб с левым верхним углом.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Разверни и сложи гармошкой","Снова разверни лист и сложи обе стороны внутрь гармошкой, как на рисунке.",["waterbomb",-22]],["Загни правую сторону треугольника","Загни правую сторону треугольника к верхней вершине.",["fold",0,-98,38,-22,64,-26,{"scope":"top"}]],["Повтори слева","Повтори этот сгиб слева.",["fold",0,-98,-38,-22,-64,-26,{"scope":"top"}]],["Загни нижний правый край","Загни внутрь нижний правый край ромба.",["fold",0,-22,38,-60,28,-34,{"scope":"top"}]],["Повтори слева","Повтори сгиб с левой стороны.",["fold",0,-22,-38,-60,-28,-34,{"scope":"top"}]],["Загни вершину и заправь клапаны","Загни верхнюю вершину вниз и заправь клапаны, как на рисунке.",["fold",-36,-62,36,-62,0,-92,{"tuck":true,"scope":"upper"}]],["Сложи самолет от себя","Осторожно сложи самолет пополам от себя, не продавливая сгиб: оставь его приоткрытым.",["half","away"]],["Отогни концы крыльев","Отогни концы обоих крыльев, сверяясь с рисунком.",["wings",{"style":"stealth","mode":"both","winglets":1,"keel":16}]]]},"44":{"orient":"portrait","steps":[["Загни правый угол","Загни верхний правый угол к левому краю.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Разверни и загни левый угол","Разверни лист и повтори сгиб с левым верхним углом.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Разверни и сложи гармошкой","Снова разверни лист и сложи обе стороны внутрь гармошкой, как на рисунке.",["waterbomb",-22]],["Загни верхнюю вершину","Загни верхнюю вершину вниз к середине края.",["fold",-42,-56,42,-56,0,-92,{"scope":"upper"}]],["Загни треугольные клапаны","Загни оба треугольных клапана к центру.",["sym",0,-56,38,-22,58,-26,{"scope":"top"}]],["Подними и заправь клапаны","Подними каждый треугольный клапан и заправь его под ранее сложенный верхний треугольник.",["fold",-26,-38,26,-38,0,-24,{"tuck":true,"scope":"top"}]],["Сложи самолет пополам","Сложи самолет пополам треугольником наружу.",["half","away"]],["Отогни оба крыла","Отогни оба крыла примерно в 2,5 см от центра.",["wings",{"style":"wide","mode":"both","keel":20}]],["Отогни закрылки в стороны","Отогни закрылки крыльев в противоположные стороны: один вверх, другой вниз.",["wings",{"style":"wide","mode":"both","winglets":1,"keel":20}]]]},"45":{"orient":"portrait","steps":[["Загни правый угол","Загни верхний правый угол к левому краю.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Повтори сгиб слева","Повтори предыдущий сгиб с другой стороны.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Разверни и сложи стороны","Разверни лист и сложи боковые стороны внутрь гармошкой.",["waterbomb",-22]],["Загни концы треугольника","Загни нижние концы треугольника к верхней вершине.",["sym",0,-98,38,-22,64,-26,{"scope":"top"}]],["Загни и разверни клапаны","Загни вниз оба клапана ромба, затем разверни их.",["fold",-38,-60,38,-60,0,-26,{"creaseOnly":true,"scope":"upper"}]],["Загни и разверни верхние края","Загни верхние края ромба к середине, затем разверни их.",["sym",0,-98,22,-60,34,-64,{"creaseOnly":true,"scope":"upper"}]],["Загни и разверни нижние края","Загни нижние края ромба к середине, затем снова разверни.",["sym",0,-22,22,-60,34,-54,{"creaseOnly":true,"scope":"upper"}]],["Сложи треугольники гармошкой","Одновременно сложи внутрь гармошкой верхний и нижний треугольники и зажми середину, приподнимая её.",["sym",0,-98,26,-22,38,-58,{"scope":"upper"}]],["Подними центральные клапаны","Подними маленькие центральные клапаны к верхнему краю.",["fold",-24,-46,24,-46,0,-28,{"scope":"top"}]],["Переверни и загни верх","Переверни самолет и загни верх вниз, чтобы центральные клапаны выступили вперед.",["fold",-56,-52,56,-52,0,-92,{"mountain":true,"scope":"upper"}]],["Сложи самолет от себя","Сложи самолет пополам от себя.",["half","away"]],["Загни первое крыло","Загни первое крыло вниз, как показано на рисунке.",["wings",{"style":"dart","mode":"one","keel":18}]],["Отогни второе крыло","Отогни второе крыло.",["wings",{"style":"dart","mode":"both","keel":18}]]]},"46":{"orient":"landscape","steps":[["Сложи и разверни лист","Положи лист горизонтально, сложи пополам слева направо и разверни.",["fold",0,-76,0,76,70,0,{"creaseOnly":true}]],["Загни левый угол","Загни верхний левый угол к центру так, чтобы сгиб совпал с углом.",["fold",0,-76,-98,22,-88,-68]],["Загни правый угол","Повтори предыдущий сгиб справа.",["fold",0,-76,98,22,88,-68]],["Загни верхний край","Загни верхний край вниз примерно на 1,25 см.",["fold",-98,-52,98,-52,0,-72]],["Повтори сгиб трижды","Загни верхний край вниз ещё три раза.",["fold",-98,-24,98,-24,0,-48]],["Сложи самолет к себе","Сложи самолет пополам к себе.",["half","toward"]],["Отогни одно крыло","Отогни одно крыло так, чтобы сгиб был параллелен нижней стороне самолета, а высота крыла составляла около 2,5 см.",["wings",{"style":"blunt","mode":"one","keel":20}]],["Повтори с другим крылом","Повтори сгиб с другим крылом.",["wings",{"style":"blunt","mode":"both","keel":20}]],["Отогни закрылки","Отогни наружу оба закрылка крыльев.",["wings",{"style":"blunt","mode":"both","winglets":1,"keel":20}]],["Вырежи прорези","Вырежи по две прорези на концах каждого крыла.",["wings",{"style":"blunt","mode":"both","winglets":1,"slits":true,"keel":20}]]]},"47":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Загни верхние углы","Разверни лист и загни верхние углы к центру.",["sym",0,-98,76,-22,68,-90]],["Загни верхние края","Повтори предыдущий сгиб, загнув оба верхних края к центру.",["sym",0,-98,76,84,62,-32]],["Снова загни углы","Снова загни углы внутрь.",["sym",0,-98,42,98,52,0]],["Сложи углы к диагоналям","Вернись к состоянию после шага 2, разогнув последующие сгибы, затем загни углы к только что полученным диагональным складкам.",["unfold",2]],["Перекрой половины","Ещё раз согни по этой складке, чтобы половины немного перекрылись в центре.",["sym",0,-98,42,98,68,20]],["Разогни средние части","Разогни перекрывающиеся части в центре так, чтобы они сошлись; за эту часть будешь держать модель.",["sym",12,-98,18,98,4,40,{"scope":"upper"}]]]},"48":{"orient":"portrait","steps":[["Сложи лист и разверни","Сложи лист пополам, разверни и загни два верхних угла к центру.",["sym",0,-98,76,-22,68,-90]],["Опусти верхний кончик","Загни верхний кончик вниз до края предыдущих сгибов.",["fold",-76,-22,76,-22,0,-88]],["Загни верхние края","Загни верхние края к центру.",["sym",0,-22,76,54,68,-16]],["Опусти кончик к краю","Загни верхний кончик вниз до нижнего края.",["fold",-76,22,76,22,0,-20]],["Подними кончик обратно","Загни кончик обратно вверх, сверяясь с рисунком; высота двойного участка должна быть около 2,5 см.",["fold",-48,44,48,44,0,82]],["Сложи самолёт и возьми ножницы","Сложи самолёт пополам и возьми ножницы.",["half","toward"]],["Вырежи по линиям","Вырежи по линиям, указанным на рисунке или в загружаемой инструкции.",["cut",{"kind":"diag_corner","x1":-8,"y1":-12,"x2":38,"y2":32,"keepX":-24,"keepY":20}]],["Отогни крылья","Отогни крылья; высота корпуса будет около 3,2 см.",["wings",{"style":"swallow","mode":"both","keel":22}]],["Подними задние законцовки","Наконец, загни вверх законцовки задней пары крыльев.",["wings",{"style":"swallow","mode":"both","winglets":1,"keel":22}]]]},"49":{"orient":"portrait","steps":[["Сложи лист и разверни","Сложи лист пополам, затем разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сделай правую складку","Загни верхний правый угол так, чтобы складка шла от верхнего центра к нижнему правому углу. Разверни.",["fold",0,-98,76,98,68,-88,{"creaseOnly":true}]],["Сложи правый угол","Загни правый угол вниз до складки из шага 2, затем повтори сгиб из шага 2.",["fold",0,-98,76,98,68,-40]],["Повтори слева","Повтори шаги 2 и 3 с левой стороны.",["fold",0,-98,-76,98,-68,-40]],["Опусти верхний кончик","Загни верхний кончик вниз до нижнего края.",["fold",-76,0,76,0,0,-88]],["Подними кончик обратно","Загни кончик обратно вверх, сверяясь с рисунком; высота двойного участка должна быть чуть меньше 2,5 см.",["fold",-42,24,42,24,0,82]],["Сложи и разверни самолёт","Сложи самолёт пополам, затем временно разверни.",["fold",0,0,0,98,50,40,{"creaseOnly":true}]],["Загни правую часть","Загни внутрь правую сторону верхней части самолёта; одновременно приподними и расплющи маленький треугольник.",["fold",18,0,48,98,62,30]],["Повтори слева и сложи","Повтори предыдущий шаг слева, затем сложи самолёт пополам.",["fold",-18,0,-48,98,-62,30]],["Вырежи контур","Сожми крылья вместе и вырежи участок, формируя контур по рисунку. Для шаблона используй печатную инструкцию.",["cut",{"kind":"diag_corner","x1":14,"y1":52,"x2":52,"y2":98,"keepX":0,"keepY":20}]],["Разверни корпус и крылья","Снова сложи корпус и отогни крылья.",["wings",{"style":"swallow","mode":"both","keel":18}]],["Вырежи хвостовые плавники","Вырежи хвостовые плавники, чтобы точнее настроить полёт.",["wings",{"style":"swallow","mode":"both","slits":true,"winglets":0.6,"keel":18}]]]},"50":{"orient":"portrait","steps":[["Сложи лист и разверни","Сложи лист пополам, затем разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Загни верхние углы","Загни два верхних угла к центру.",["sym",0,-98,76,-22,68,-90]],["Загни верхние края","Снова загни два верхних края к центру.",["sym",0,-98,76,84,62,-32]],["Опусти верхний кончик","Загни верхний кончик вниз до нижнего края или немного не доходя до него.",["fold",-76,6,76,6,0,-88]],["Загни углы к центру","Загни два верхних угла к центру.",["sym",0,6,76,82,68,14]],["Сверься с рисунком","Проверь по рисунку, что получилось.",["fold",0,6,0,98,50,50,{"creaseOnly":true}]],["Подними центральный клапан","Загни треугольный клапан в центре вверх до верхнего кончика самолёта.",["fold",-26,52,26,52,0,82]],["Сложи самолёт пополам","Сложи самолёт пополам по центральной линии.",["half","toward"]],["Отогни крылья","Наконец, отогни оба крыла.",["wings",{"style":"dart","mode":"both","keel":18}]]]},"51":{"orient":"portrait","steps":[["Сложи лист дважды","Держа лист вертикально, согни верх к низу, затем сложи пополам слева направо.",["sym",0,-98,0,98,60,0,{"creaseOnly":true}]],["Разверни и загни углы","Разверни горизонтальную складку, затем загни верхние углы к центру.",["sym",0,-98,76,-22,68,-90]],["Разверни и сложи гармошкой","Полностью разверни лист и сложи боковые стороны гармошкой внутрь.",["waterbomb",-22]],["Переложи правые клапаны","Переложи верхний слой правого клапана полностью влево. Оставшийся клапан справа загни к центру.",["fold",0,-98,38,-22,64,-28,{"scope":"top"}]],["Загни верхний левый слой","Теперь слева три слоя. Загни верхний слой к центру.",["fold",0,-98,20,-22,34,-30,{"scope":"top"}]],["Подними клапаны в стороны","Загни эти два сложенных клапана вверх в противоположные стороны, сверяясь с рисунком.",["fold",-18,-58,28,-36,16,-24,{"scope":"top"}]],["Повтори справа налево","Повтори шаги 4 и 5 с левой стороны.",["fold",0,-98,-38,-22,-64,-28,{"scope":"top"}]],["Подними клапаны врозь","Загни клапаны вверх в противоположные стороны, как в шаге 6.",["fold",18,-58,-28,-36,-16,-24,{"scope":"top"}]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Отогни крылья","Отогни крылья по рисунку так, чтобы передний край крыла касался нижней части корпуса самолёта.",["wings",{"style":"canard","mode":"both","keel":18}]],["Подними верхний слой крыльев","Наконец, загни вверх верхний слой крыльев.",["wings",{"style":"canard","mode":"both","winglets":1,"keel":18}]]]},"52":{"orient":"portrait","steps":[["Сложи лист вертикально","Сложи лист пополам по вертикали. Разверни и загни верхние углы к центру.",["sym",0,-98,76,-22,68,-90]],["Опусти кончик к краю","Загни верхний кончик вниз до нижнего края. Если используешь лист A4, остановись примерно за 2 см до края.",["fold",-76,-6,76,-6,0,-88]],["Подними кончик обратно","Загни кончик обратно вверх, совместив его с нижним краем треугольных клапанов; нахлёст должен быть около 3 см.",["fold",-44,22,44,22,0,68,{"scope":"top"}]],["Сложи боковые части","Загни верхнюю часть правой стороны к центру, затем вытяни нижнюю часть вправо и расплющи. Повтори слева.",["sym",0,-6,58,98,70,12]],["Перегни центральные клапаны","Достань центральные клапаны изнутри, перегни их в обратную сторону и загни боковые части внутрь.",["sym",16,-6,36,78,42,36,{"scope":"top"}]],["Подверни края клапанов","Загни нижний край каждого центрального клапана назад под небольшим углом, подверни и прижми.",["fold",-26,26,26,26,0,42,{"tuck":true,"scope":"upper"}]],["Загни верхние углы","Загни наружные кончики верхнего треугольника к центру.",["sym",0,-6,36,42,34,4,{"scope":"upper"}]],["Сложи самолёт на себя","Сложи самолёт пополам на себя.",["half","toward"]],["Отогни оба крыла","Отогни оба крыла по рисунку; корпус должен расширяться от острия и достигать примерно 4 см у хвоста.",["wings",{"style":"canard","mode":"both","keel":22}]],["Закрепи клапан кабины","Разверни один внутренний клапан спереди, в области кабины, и перекинь его поверх второго, чтобы зафиксировать.",["wings",{"style":"canard","mode":"both","dihedral":0.4,"keel":22}]],["Подними края крыльев","Наконец, загни вверх наружные края крыльев.",["wings",{"style":"canard","mode":"both","dihedral":0.4,"winglets":1,"keel":22}]]]},"53":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам, разверни и загни два верхних угла к центру.",["sym",0,-98,76,-22,68,-90]],["Сведи верхние края","Загни оба верхних края к центру.",["sym",0,-98,76,84,62,-32]],["Снова сведи края","Ещё раз загни оба внешних края к центру.",["sym",0,-98,42,98,52,20]],["Отогни правый клапан","Возьми правый центральный клапан и отогни его наружу; сверься с рисунком.",["fold",14,-40,28,98,4,30,{"scope":"top"}]],["Отогни левый клапан","Так же отогни наружу левый центральный клапан.",["fold",-14,-40,-28,98,-4,30,{"scope":"top"}]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Раскрой крылья","Отогни оба крыла, чтобы корпус имел высоту около 1 см по всей длине.",["wings",{"style":"dart","mode":"both","keel":14}]]]},"54":{"orient":"portrait","steps":[["Сложи лист дважды","Держа лист вертикально, загни верхний край к нижнему, затем сложи лист пополам слева направо.",["sym",0,-98,0,98,60,0,{"creaseOnly":true}]],["Разверни и загни углы","Разверни горизонтальный сгиб и загни два верхних угла к центру.",["sym",0,-98,76,-22,68,-90]],["Разверни гармошкой боковины","Полностью разверни лист, затем сложи боковые стороны гармошкой внутрь.",["waterbomb",-22]],["Опусти верхнюю вершину","Загни верхнюю вершину вниз к нижнему краю.",["fold",-76,18,76,18,0,-88]],["Подними вершину обратно","Загни вершину обратно вверх, оставив нахлёст около 23 мм; сверься с рисунком.",["fold",-46,38,46,38,0,82]],["Сложи самолёт пополам","Сложи самолёт пополам.",["half","toward"]],["Подогни нос самолёта","Загни нос самолёта вверх и внутрь. Отогни маленькие треугольные боковые клапаны назад, вровень с корпусом. При желании склей их.",["fold",-22,18,12,48,-32,22]],["Отогни оба крыла","Отогни оба крыла, оставив корпус высотой около 2,5 см.",["wings",{"style":"stealth","mode":"both","keel":20}]],["Сложи верхний слой крыла","Загни край верхнего слоя правого крыла внутрь примерно на 1,5 см, затем загни ещё раз. Сверь детали с видео или шаблоном.",["wings",{"style":"stealth","mode":"both","winglets":0.6,"keel":20}]],["Сложи нижний слой крыла","Сделай два похожих сгиба на нижнем слое правого крыла.",["wings",{"style":"stealth","mode":"both","winglets":1,"keel":20}]],["Повтори слева","Повтори сгибы с левой стороны. Подправь крыло, чтобы оно имело U-образную форму.",["wings",{"style":"stealth","mode":"both","winglets":1,"dihedral":0.9,"keel":20}]]]},"55":{"orient":"portrait","steps":[["Сложи лист пополам","Сложи лист пополам и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Наметь боковые сгибы","Загни правую сторону к левой и разверни, затем так же загни и разверни левую сторону.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Согни верх листа","Разверни лист и загни верхний край вниз так, чтобы сгиб пересёк X, образованный остальными линиями сгиба.",["fold",-76,-22,76,-22,0,-90,{"creaseOnly":true}]],["Согни правый край","Разверни лист и загни правую сторону вниз до диагонального сгиба.",["fold",0,-98,76,54,68,-40]],["Согни левый край","Так же загни левую сторону вниз.",["fold",0,-98,-76,54,-68,-40]],["Опусти верхний край","Загни верхний край вниз к нижнему.",["fold",-76,0,76,0,0,-88]],["Загни край по ориентиру","Загни верхний край вниз, используя сгиб из шага 3 как ориентир; сверься с рисунком.",["fold",-76,22,76,22,0,4]],["Подними вершину","Загни вершину обратно вверх.",["fold",-44,42,44,42,0,82]],["Сведи стороны внутрь","Загни обе стороны внутрь.",["sym",28,22,28,98,66,60]],["Снова загни стороны","Ещё раз загни обе стороны внутрь.",["sym",16,22,16,98,36,60]],["Опусти верхнюю вершину","Загни верхнюю вершину обратно вниз.",["fold",-26,38,26,38,0,18]],["Сложи самолёт пополам","Сложи самолёт пополам от себя.",["half","away"]],["Раскрой короткие крылья","Отогни оба крыла, чтобы корпус получился довольно коротким.",["wings",{"style":"wide","mode":"both","keel":14}]]]},"56":{"orient":"portrait","steps":[["Разрежь лист пополам","Сложи лист пополам и разверни. Разрежь по сгибу и возьми одну половину; вторую сохрани для ещё одного бумеранга.",["cut",{"kind":"half_v"}]],["Согни края к центру","Сложи выбранную половину пополам и разверни, затем загни обе стороны к середине.",["sym",20,-98,20,98,36,0]],["Сложи лист в другую сторону","Сложи лист пополам в другом направлении и расположи сгибом вниз.",["fold",-40,0,40,0,0,-80]],["Загни углы к центру","Загни оба угла к середине, тщательно прижав сгиб ногтем.",["sym",0,0,20,20,18,4]],["Разверни и зажми середину","Разверни два последних сгиба, затем раскрой левый клапан и зажми середину листа так, чтобы она сложилась в обратную сторону.",["unfold",1]],["Сформируй букву L","Продолжай поворачивать и складывать зажатую часть, пока она не расплющится в форму буквы L с вертикальными стенками.",["custom",[{"poly":[[-72,-72],[18,-72],[18,-28],[-28,-28],[-28,72],[-72,72]],"shade":0},{"poly":[[-72,-72],[18,-72],[18,-50],[-50,-50],[-50,72],[-72,72]],"shade":1}],[18,-10,-28,-28]]],["Опусти стенки","Опусти вертикальную стенку с более широкой стороны, затем уложи вниз и вторую стенку.",["custom",[{"poly":[[-72,-68],[56,-68],[56,-24],[-24,-24],[-24,72],[-72,72]],"shade":0},{"poly":[[-72,-68],[56,-68],[56,-46],[-48,-46],[-48,72],[-72,72]],"shade":1}],[10,-68,10,-34]]],["Заправь угол в карман","Немного раскрой предыдущий сгиб и заправь угол в образовавшийся карман.",["fold",-72,-24,-24,-68,-66,-62]],["Прижми сгибы","Прижми всю конструкцию, расплющив её.",["fold",-48,-68,-48,72,-66,0,{"creaseOnly":true}]],["Загни углы внутрь","Раскрой каждую вершину и загни углы к середине.",["custom",[{"poly":[[-72,-68],[42,-68],[56,-46],[42,-24],[-24,-24],[-24,58],[-48,72],[-72,58]],"shade":0},{"poly":[[-72,-68],[42,-68],[56,-46],[-48,-46],[-48,72],[-72,58]],"shade":1}],[54,-66,42,-52]]],["Спрячь углы гармошкой","Каждую из утолщённых угловых частей, загнутых на предыдущем шаге, разверни и сложи гармошкой, заправив угол внутрь.",["custom",[{"poly":[[-72,-68],[38,-68],[56,-46],[38,-24],[-24,-24],[-24,54],[-48,72],[-72,54]],"shade":0},{"poly":[[38,-68],[56,-46],[38,-24]],"shade":2},{"poly":[[-72,54],[-48,72],[-24,54]],"shade":2}],[-70,68,-54,56]]],["Заправь остальные углы","Загни два других угла в карманы, образованные на предыдущем шаге.",["custom",[{"poly":[[-72,-52],[-54,-68],[38,-68],[56,-46],[38,-24],[-24,-24],[-24,54],[-48,72],[-72,54]],"shade":1,"creases":[[[-48,-46],[42,-46]],[[-48,-46],[-48,58]]]}],[-70,-66,-56,-54]]],["Расплющи конструкцию","Расплющи всё и проверь, что конструкция лежит на столе без перекосов.",["fold",-48,-46,42,-46,0,-60,{"creaseOnly":true}]]]},"57":{"orient":"portrait","steps":[["Сложи лист вдоль","Сложи лист пополам вдоль и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Сведи стороны к центру","Загни обе стороны к середине.",["sym",38,-98,38,98,68,0]],["Сложи лист поперёк","Сложи лист пополам в другом направлении и расположи сгибом вниз. Клапаны предыдущего сгиба должны оказаться снаружи.",["fold",-40,0,40,0,0,-80]],["Загни нижние углы","Загни два нижних угла к середине, образуя треугольник, затем разверни.",["sym",0,0,38,38,34,4,{"creaseOnly":true}]],["Спрячь углы гармошкой","Сложи углы гармошкой к середине, заправив треугольные части внутрь.",["waterbomb",38]],["Согни переднюю часть","Загни переднюю часть вниз, совместив её с внешним углом. Сделай чёткий сгиб и отогни обратно, чтобы получилось как после шага 5.",["fold",-38,38,38,38,0,4,{"creaseOnly":true}]],["Раздвинь вертикальные сгибы","Просунь пальцы внутрь двух вертикальных сгибов и разведи их, одновременно загибая лист вниз по линии сгиба из шага 6.",["custom",[{"poly":[[-68,12],[68,12],[44,88],[-44,88]],"shade":0,"creases":[[[0,12],[0,88]]]},{"poly":[[0,-48],[68,12],[-68,12]],"shade":1}],[0,-10,0,26]]],["Расплющи крылья","Полностью загни лист вниз по этому сгибу и расплющи крылья.",["fold",-68,12,68,12,0,-40]],["Отогни средние клапаны","Переверни лист и загни два верхних средних клапана по диагонали наружу.",["flip","x"]],["Подними нижние края","Загни нижний левый край к середине, затем так же загни правый.",["sym",0,88,48,12,42,78]],["Подними нижнюю вершину","Загни нижнюю вершину вверх по линии, образованной внутренними слоями.",["fold",-44,58,44,58,0,84]],["Сложи самолёт пополам","Сложи весь бумажный самолёт пополам.",["half","toward"]],["Зафиксируй сгиб при желании","При желании просунь пальцы внутрь и загни кончик маленькой треугольной детали на одну сторону, чтобы зафиксировать конструкцию.",["fold",-12,42,12,58,8,54,{"scope":"top"}]],["Раскрой крылья","Отогни обе стороны, формируя крылья. Расположи сгиб параллельно центральному сгибу, примерно на трети длины передней части самолёта.",["wings",{"style":"canard","mode":"both","keel":18}]],["Подними кошачьи ушки","Подними «кошачьи ушки» с обеих сторон.",["wings",{"style":"canard","mode":"both","winglets":0.7,"keel":18}]],["Загни задние законцовки","Загни вверх законцовки крыльев в задней части самолёта. Если используешь лист A4, можешь загнуть их вниз.",["wings",{"style":"canard","mode":"both","winglets":1,"dihedral":0.5,"keel":18}]]]},"58":{"orient":"portrait","steps":[["Сложи лист вдоль","Сложи лист пополам вдоль и разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Загни верхний край","Переверни лист и загни верхний край вниз примерно на 2,5 см.",["fold",-76,-72,76,-72,0,-92,{"mountain":true}]],["Сведи верхние углы","Переверни лист обратно и загни два верхних угла к центральному сгибу.",["sym",0,-72,76,4,68,-66]],["Опусти верхний треугольник","Загни верхний треугольник вниз так, чтобы его диагональные края совпали с верхними углами листа.",["fold",-76,4,76,4,0,-66]],["Подними треугольник обратно","Загни треугольник обратно вверх, чтобы его вершина коснулась верхнего края листа.",["fold",-44,42,44,42,0,74,{"scope":"top"}]],["Переверни и загни углы","Переверни лист на обратную сторону и загни два верхних угла к центральному сгибу.",["flip","x"]],["Переложи углы к сгибу","Разверни предыдущий сгиб и загни два верхних угла к образовавшейся линии сгиба.",["sym",0,4,76,80,68,12,{"creaseOnly":true}]],["Повтори сгиб из шага 6","Снова выполни сгиб из шага 6.",["sym",32,4,76,48,68,10]],["Открой карман у носа","Осторожно раздвинь два слоя у носа самолёта, чтобы открыть маленький карман, и заправь в него переднюю часть.",["sym",0,4,76,80,68,45]],["Заправь нос в карман","Полностью заправь вершину в карман и прижми сгиб.",["fold",-28,36,28,36,0,12,{"tuck":true,"scope":"upper"}]],["Сложи самолёт пополам","Сложи бумажный самолёт пополам.",["half","toward"]],["Опусти крылья","Загни вниз каждое крыло так, чтобы его край совпал с нижним краем самолёта.",["wings",{"style":"dart","mode":"both","keel":18}]]]},"59":{"orient":"portrait","steps":[["Опусти угол","Опусти один угол к противоположному краю и разверни. Повтори с другим углом и снова разверни.",["fold",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Повтори сгиб","Сложи другой угол к противоположному краю и разверни лист.",["fold",76,-98,-76,54,-68,-90,{"creaseOnly":true}]],["Совмести край","Сложи одну сторону, совместив её край со сгибом предыдущего шага.",["fold",0,-98,56,98,70,0]],["Сложи другую сторону","Сложи другую сторону по тому же сгибу.",["fold",0,-98,-56,98,-70,0]],["Опусти верх","Опусти верхнюю часть по имеющемуся сгибу.",["fold",-56,-22,56,-22,0,-88]],["Сложи пополам","Сложи самолёт пополам вдоль середины, затем разверни.",["fold",0,-98,0,98,60,0,{"creaseOnly":true}]],["Оставь зазор","Сложи верхние края к центральной линии, оставив до неё примерно 1 мм.",["sym",0,-22,52,48,48,-16,{"creaseOnly":true}]],["Сложи гармошкой","Разверни предыдущий сгиб, затем гармошкой сложи боковые части к центру и прижми.",["waterbomb",22]],["Заправь клапан","Подогни центральный клапан под низ и заправь внутрь, чтобы зафиксировать створки.",["fold",-28,22,28,22,0,-10,{"tuck":true,"scope":"upper"}]],["Сложи самолёт","Снова сложи самолёт пополам и прижми все сгибы.",["half","toward"]],["Отогни крыло","Отогни одно крыло по указанной линии так, чтобы фюзеляж расширялся к хвосту.",["wings",{"style":"blunt","mode":"one","keel":20}]],["Отогни второе крыло","Отогни второе крыло так же, как первое.",["wings",{"style":"blunt","mode":"both","keel":20}]]]},"60":{"orient":"landscape","steps":[["Сложи лист","Поверни лист длинной стороной к себе и сложи пополам слева направо.",["fold",0,-76,0,76,70,0,{"creaseOnly":true}]],["Наметь боковые сгибы","Сложи левую и правую стороны к центральному сгибу, затем разверни.",["sym",49,-76,49,76,88,0,{"creaseOnly":true}]],["Опусти верхние углы","Опусти два верхних угла к наружным сгибам, сформировав два треугольника.",["sym",49,-76,98,-27,92,-70]],["Наметь верхние края","Сложи верхние края к центральному сгибу, затем разверни.",["sym",0,-76,76,0,68,-68,{"creaseOnly":true}]],["Сложи боковые стороны","Сложи левую и правую стороны к сгибу, полученному на предыдущем шаге.",["sym",58,-76,58,76,92,0]],["Повтори сгибы","Снова выполни сгибы, намеченные на шаге 4.",["sym",0,-76,58,-18,52,-70]],["Опусти нос","Опусти нос самолёта так, чтобы его кончик совпал с углами, сходящимися в центре.",["fold",-58,-18,58,-18,0,-70]],["Сведи края","Снова сложи левую и правую стороны так, чтобы верхние края сошлись у центрального сгиба.",["sym",29,-18,29,76,52,20]],["Отмерь расстояние","Сложи самолёт пополам. Отмерь внутрь по 6,3 см от нижней и задней сторон, отметь точки и соедини их диагональной линией.",["half","toward"]],["Разрежь по линии","Разрежь лист по диагональной линии и сохрани треугольный кусок.",["cut",{"kind":"diag_corner","x1":-14,"y1":76,"x2":18,"y2":22,"keepX":-8,"keepY":0}]],["Сложи утяжелитель","Подними кончики треугольного куска к центру, сформировав квадрат. Сложи его пополам, чтобы получился маленький треугольник.",["custom",[{"poly":[[0,-56],[68,56],[-68,56]],"shade":0,"creases":[[[0,-56],[0,56]]]},{"poly":[[0,64],[22,86],[-22,86]],"shade":2}],[0,82,0,58]]],["Вставь утяжелитель","Вставь маленький треугольник в нос самолёта для утяжеления. Если нужно, приклей его к задней стороне носа.",["custom",[{"poly":[[0,-56],[68,56],[-68,56]],"shade":0,"creases":[[[0,-56],[0,56]]]},{"poly":[[0,-56],[22,-20],[-22,-20]],"shade":2}],[0,30,0,-34]]],["Закрепи крылья","Приклей лентой крылья по всей длине с обеих сторон, чтобы они лежали ровно.",["wings",{"style":"stealth","mode":"both","keel":14}]],["Подними законцовки","Подними законцовки крыльев с обеих сторон.",["wings",{"style":"stealth","mode":"both","winglets":1,"keel":14}]]]},"61":{"orient":"portrait","steps":[["Опусти угол","Опусти один угол к противоположному краю и разверни. Повтори с другим углом.",["sym",-76,-98,76,54,68,-90,{"creaseOnly":true}]],["Согни верх","Разверни лист и переверни его. Опусти верхний край так, чтобы новый сгиб проходил через пересечение прежних сгибов.",["fold",-76,-22,76,-22,0,-90,{"creaseOnly":true}]],["Сложи гармошкой","Разверни лист, переверни его и гармошкой сложи боковые части к центру. Прижми.",["waterbomb",-22]],["Опусти верхний кончик","Опусти верхний кончик к краю верхнего слоя бумаги.",["fold",-42,-56,42,-56,0,-92]],["Верни исходные сгибы","Разверни всё до исходного положения. Затем согни по имеющейся линии чуть ниже середины листа.",["unfold",0]],["Перегни сгиб","Перегни этот сгиб так, чтобы он вышел за нижний край.",["fold",-76,12,76,12,0,-80]],["Заправь правый сгиб","Заверни внутрь самолёта вертикальный сгиб справа и заправь его полностью.",["fold",38,12,38,98,68,50]],["Заправь левый сгиб","Повтори то же с левой стороны.",["fold",-38,12,-38,98,-68,50]],["Собери сгибы","Поверни бумагу и аккуратно восстанови имеющиеся сгибы: центральная точка должна уйти внутрь, а края — гармошкой сложиться к центру.",["rot",180]],["Продолжи гармошку","Продолжай складывать боковые части внутрь, пока левая и правая стороны верхнего слоя не дойдут до боковых краёв.",["waterbomb",-18]],["Прижми сгибы","Прижми всё плоско.",["fold",0,-92,0,80,48,0,{"creaseOnly":true}]],["Направь складку вперёд","Сложи одну сторону верхнего слоя по диагонали вперёд, чтобы она указывала вперёд.",["fold",0,-18,42,-58,34,-24,{"scope":"top"}]],["Повтори складку","Повтори то же с другой стороны.",["fold",0,-18,-42,-58,-34,-24,{"scope":"top"}]],["Заправь выступы","Загни выступы назад вокруг задней части и заправь в карман, образованный предыдущими сгибами.",["fold",-28,-58,28,-58,0,-86,{"tuck":true,"scope":"upper"}]],["Прижми самолёт","Прижми всё плоско.",["fold",0,-58,0,80,48,0,{"creaseOnly":true}]],["Сформируй карман","Переверни самолёт и линейкой выполни диагональные сгибы с обеих сторон, формируя карман глубиной около 2,5 см.",["flip","x"]],["Сложи с карманом","Сложи самолёт пополам так, чтобы карман загнулся внутрь и лёг плоско.",["sym",0,-58,26,80,12,30,{"creaseOnly":true}]],["Выровняй половины","Сложи самолёт пополам ещё раз, совместив левую и правую стороны для симметрии.",["half","toward"]],["Зафиксируй крылья","Отогни крылья, совместив сгибы с внутренним карманом, чтобы зафиксировать конструкцию.",["wings",{"style":"stealth","mode":"both","keel":18}]],["Подними законцовки","Подними две законцовки крыльев.",["wings",{"style":"stealth","mode":"both","winglets":1,"keel":18}]],["Приподними крылья","Согни крылья вверх под углом, чтобы повысить устойчивость.",["wings",{"style":"stealth","mode":"both","winglets":1,"dihedral":0.9,"keel":18}]]]}};
+const catalogRows=[
+ [32,'The Bird',2,'d',0],[60,'Sky OmniWing',0,'dp',1],[1,'Basic Dart',0,'d',0],
+ [7,'Heavy-Nosed Plane',2,'dp',0],[21,'Fast Hawk',3,'dp',1],[29,'Lock-Bottom',0,'dp',1],
+ [52,'Horizon',3,'d',0],[6,'Hunting Flight',1,'dp',0],[37,'Tail Spin',0,'a',0],
+ [38,'Lift Off',0,'d',1],[39,'V-Wing',1,'dp',1],[41,'Sonic Jet',2,'dp',0],
+ [49,'The Arrow',3,'d',1],[50,'Raven',0,'d',0],[13,'The UFO',1,'pa',1],
+ [42,'Spinner Plane',1,'ax',0],[34,'Soaring Eagle',2,'p',0],[35,'Navy Plane',2,'dp',0],
+ [43,'Stealth Glider',1,'dp',0],[48,'Fast Glider',1,'dp',1],[51,'Trooper',1,'d',0],
+ [54,'Space Fighter',1,'ax',0],[58,'Arrowhead',0,'d',0],[61,'Condor',2,'p',0],
+ [36,'Canard',2,'d',0],[55,'Mosquito',1,'dp',0],[59,'Flying Shovel',0,'p',0],
+ [2,'The Stable',0,'pa',0],[15,'Spin Plane',2,'a',0],[18,'Origami Plane',3,'pa',1],
+ [23,'Zip Dart',2,'dp',0],[33,'Fast Swallow',2,'dp',1],[40,'Vulture',2,'dp',0],
+ [46,'Loop Plane',0,'ax',1],[53,'Wilson',0,'da',0],[10,'Tailed Plane',1,'dp',1],
+ [16,'Stunt Plane',2,'a',0],[27,'Underside Plane',1,'p',0],[28,'Sailor Wing',3,'dp',0],
+ [57,'Uppercat',2,'p',0],[3,'The Buzz',1,'dp',0],[9,'Gliding Plane',2,'pa',0],
+ [19,'Eagle Eye',1,'x',1],[22,'King Bee',1,'a',1],[56,'Boomerang',3,'a',1],
+ [17,'The Square',1,'dp',1],[20,'White Dove',1,'x',0],[44,'Light Spinner',1,'da',0],
+ [45,'Fun Flyer',2,'d',0],[47,'Wedge Plane',1,'d',0],[24,'Jet Fighter',2,'dp',0],
+ [0,'The Basic',0,'p',0],[5,'Sea Glider',1,'x',1],[14,'Cross Wing',1,'dp',0],
+ [8,'Royal Wing',2,'a',1],[11,'Star Wing',1,'ax',0],[4,'The Sprinter',1,'da',0],
+ [12,'Water Plane',0,'pa',0]
+];
+const names={0:'Классика',1:'Дротик',2:'Стабильный',3:'Жужжалка',4:'Спринтер',5:'Морской планер',6:'Охотничий полёт',7:'Тяжёлый нос',8:'Королевское крыло',9:'Парящий',10:'Хвостатый',11:'Звёздное крыло',12:'Водный самолётик',13:'НЛО',14:'Крестокрыл',15:'Вертушка',16:'Трюкач',17:'Квадрат',18:'Оригами',19:'Орлиный глаз',20:'Белый голубь',21:'Быстрый ястреб',22:'Король пчёл',23:'Шустрый дротик',24:'Реактивный самолётик',27:'Нижнее крыло',28:'Крыло моряка',29:'Замок снизу',32:'Птица',33:'Быстрая ласточка',34:'Парящий орёл',35:'Морской самолётик',36:'Канард',37:'Хвостовой вихрь',38:'Взлёт',39:'V-крыло',40:'Гриф',41:'Соник',42:'Спиннер',43:'Стелс-планер',44:'Лёгкий спиннер',45:'Весёлый летун',46:'Петля',47:'Клин',48:'Быстрый планер',49:'Стрела',50:'Ворон',51:'Десантник',52:'Горизонт',53:'Уилсон',54:'Космический самолётик',55:'Комар',56:'Бумеранг',57:'Апперкэт',58:'Наконечник стрелы',59:'Летающая лопатка',60:'Омникрыло',61:'Кондор'};
+const levels=['Легко','Средне','Сложно','Эксперт'];
+const tags={distance:'Дальность',duration:'Планирование',acrobatics:'Трюки',decorative:'Декоративные'};
+const pinned=[1,43,'suzanne',0,2,32];
+const tagCode={d:'distance',p:'duration',a:'acrobatics',x:'decorative'};
+const planes=catalogRows.map(([id,en,level,types,cut])=>{const row=flightMetrics[id]||{};const {distance,duration}=row;return {id,en,level:row.level??level,types:[...types].map(t=>tagCode[t]),cut,name:names[id]||en,distance,duration,speed:distance!=null&&duration>0?distance/duration*3.6:null,source:F+id+'.html',video:F+id+'v.html'};});
+planes.push({id:'suzanne',name:'Сюзанна',en:'Suzanne',level:2,types:['distance','duration'],cut:false,record:69.14,recordTime:9,speed:69.14/9*3.6,source:WIRED,video:SUVIDEO});
+
+const $=id=>document.getElementById(id);
+const format=(n,d=1)=>new Intl.NumberFormat('ru-RU',{maximumFractionDigits:d}).format(n);
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const external=(url,label,cls='')=>`<a ${cls?`class="${cls}"`:''} href="${escape(url)}" target="_blank" rel="noopener">${escape(label)} <span aria-hidden="true">↗</span></a>`;
+const serial=p=>p.id==='suzanne'?'SUZ':`FNF / ${String(p.id).padStart(2,'0')}`;
+const dist=p=>p.record?`${format(p.record,2)} м`:p.distance!=null?`${format(p.distance)} м`:'—';
+const vel=p=>p.speed!=null?`≈ ${format(p.speed)} км/ч`:'—';
+const typeLabel=p=>p.types.map(t=>tags[t]).filter(Boolean).join(' · ')||'Другие модели';
+
+const compiledCache=new Map();
+function getCompiled(p){
+ const k=String(p.id);
+ if(!compiledCache.has(k))compiledCache.set(k,OrigamiEngine.compileModel(origamiRecipes[k]));
+ return compiledCache.get(k);
+}
+const stepCount=p=>origamiRecipes[String(p.id)]?.steps.length||0;
+
+function silhouette(p){
+ const variant=p.id==='suzanne'||p.types.includes('duration')?'wide':p.types.includes('distance')?'dart':'trick';
+ const shape={dart:['M110 14 177 103 110 86 43 103Z','M110 14 128 91 110 86 92 91Z'],wide:['M110 20 200 86 151 98 110 81 69 98 20 86Z','M110 20 132 90 110 81 88 90Z'],trick:['M110 18 166 61 197 104 142 88 110 103 78 88 23 104 54 61Z','M110 18 135 91 110 103 85 91Z']}[variant];
+ return `<svg viewBox="0 0 220 118" aria-hidden="true"><path d="M14 61h192M110 5v108" stroke="#7992a3" stroke-dasharray="3 5" fill="none"/><path d="${shape[0]}" fill="#f9fbfc" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="${shape[1]}" fill="#a8bdc9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M110 16v71" stroke="currentColor" stroke-dasharray="4 3"/></svg>`;
+}
+function metrics(p){return `<div class="metric-grid"><div><span>Сложность</span><b>${levels[p.level]}</b></div><div><span>${p.record?'Рекорд':'Дальность'}</span><b>${dist(p)}</b></div><div><span>${p.record?'Скорость рекорда':'Скорость ≈'}</span><b>${vel(p)}</b></div></div>`;}
+function card(p){const total=stepCount(p);return `<article class="card"><div class="art"><span class="serial">${serial(p)}</span><span class="mark">${total} ${total%100>=11&&total%100<=14?'шагов':total%10===1?'шаг':total%10>=2&&total%10<=4?'шага':'шагов'}</span>${silhouette(p)}</div><div class="card-body"><h3>${escape(p.name)}</h3><p class="en">${p.en!==p.name?escape(p.en):'Бумажная модель'}</p><p class="type">${typeLabel(p)}${p.cut?' · Нужны ножницы':''}</p>${metrics(p)}<button class="open" type="button" data-plane="${p.id}" aria-label="Инструкция: ${escape(p.name)}">Инструкция <span aria-hidden="true">→</span></button></div></article>`;}
+
+const state={limit:12,active:null,tab:'steps',step:0,raf:0,stepRaf:0,playing:false,animPos:0,speed:1,lastTs:0};
+const rank=p=>pinned.includes(p.id)?pinned.indexOf(p.id):pinned.length+planes.indexOf(p);
+const norm=s=>s.toLowerCase().trim().replaceAll('ё','е');
+
+function render(){
+ const q=norm($('query').value),lvl=$('difficulty').value,type=$('type').value,sort=$('sort').value;
+ const shown=planes.filter(p=>(!q||norm(`${p.name} ${p.en}`).includes(q))&&(!lvl||p.level===+lvl)&&(!type||p.types.includes(type))&&(!$('local').checked||p.speed!=null)&&(!$('nocut').checked||!p.cut));
+ const metric=p=>p.record?-1:(p[sort]??-1);
+ shown.sort((a,b)=>sort==='difficulty'?(a.level-b.level||rank(a)-rank(b)):sort==='featured'?rank(a)-rank(b):(metric(b)-metric(a)||rank(a)-rank(b)));
+ $('count').textContent=`Показано ${Math.min(shown.length,state.limit)} из ${shown.length}${shown.length!==planes.length?` · всего ${planes.length}`:''}`;
+ $('cards').innerHTML=shown.slice(0,state.limit).map(card).join('')||'<div class="empty">Модели не найдены. Попробуй другой запрос или сбрось фильтры.</div>';
+ $('more').hidden=shown.length<=state.limit;
+}
+
+function originalPhoto(p,i){
+ return p.id==='suzanne'?external(SUMAKE,'Оригинальные схемы Коллинза'):external(`${F}data/${p.id}/${i+1}.jpg`,'Оригинальное фото шага');
+}
+function footageUrl(p,embed=false){
+ const vid=footageIds[p.id];
+ const start=p.id==='suzanne'?1060:0;
+ return embed?`https://www.youtube-nocookie.com/embed/${vid}?playsinline=1&rel=0${start?'&start='+start:''}`:`https://www.youtube.com/watch?v=${vid}${start?'&t='+start+'s':''}`;
+}
+function flightTest(){
+ return `<details class="test-box"><summary>Измерить свой запуск</summary><div class="test-form"><label>Дальность, м<input aria-label="Дальность своего запуска, метры" type="text" inputmode="decimal" data-flight="distance" placeholder="Например, 8,5"></label><label>Время полёта, с<input aria-label="Время своего запуска, секунды" type="text" inputmode="decimal" data-flight="time" placeholder="Например, 2"></label><output id="flight-result" aria-live="polite">Введи дальность и время.</output><p class="hint">Измерь от линии броска до первого касания пола. Засеки время от выпуска до касания. Результат не меняет данные каталога.</p></div></details>`;
+}
+function updateFlight(){
+ const d=$('plane-metrics').querySelector('[data-flight=distance]').value.trim().replace(',','.');
+ const t=$('plane-metrics').querySelector('[data-flight=time]').value.trim().replace(',','.');
+ const speed=Number(d)/Number(t)*3.6;
+ $('flight-result').textContent=d&&t&&+d>=0&&+t>0&&Number.isFinite(speed)?`Твой запуск: ≈ ${format(speed)} км/ч.`:'Введи дальность (0 или больше) и время (больше 0).';
+}
+
+function stopAllAnim(){
+ if(state.raf){cancelAnimationFrame(state.raf);state.raf=0;}
+ if(state.stepRaf){cancelAnimationFrame(state.stepRaf);state.stepRaf=0;}
+ state.playing=false;
+ state.lastTs=0;
+}
+
+function paintStepStatic(){
+ const c=$('step-canvas');
+ if(!c||!state.active)return;
+ const steps=getCompiled(state.active);
+ const st=steps[state.step];
+ if(!st)return;
+ const ctx=c.getContext('2d');
+ OrigamiEngine.renderStepDiagram(ctx,c.width,c.height,st);
+}
+
+function replayCurrentStep(){
+ const c=$('step-canvas');
+ if(!c||!state.active)return;
+ if(state.stepRaf){cancelAnimationFrame(state.stepRaf);state.stepRaf=0;}
+ const steps=getCompiled(state.active);
+ const st=steps[state.step];
+ if(!st)return;
+ const ctx=c.getContext('2d');
+ const start=performance.now();
+ const dur=1550;
+ const btn=$('replay-fold');
+ if(btn)btn.textContent='Сгибаем…';
+ function tick(now){
+  if(!$('step-canvas')||state.tab!=='steps'){state.stepRaf=0;return;}
+  const p=Math.min(1,(now-start)/dur);
+  if(p<0.97)OrigamiEngine.renderStepFrame(ctx,c.width,c.height,st,p);
+  else OrigamiEngine.renderStepDiagram(ctx,c.width,c.height,st);
+  if(p<1)state.stepRaf=requestAnimationFrame(tick);
+  else{state.stepRaf=0;if($('replay-fold'))$('replay-fold').textContent='▶ Показать сгиб';}
+ }
+ state.stepRaf=requestAnimationFrame(tick);
+}
+
+function stepDurationSec(st){
+ const desc=(st?.text||'');
+ return Math.max(1.85,Math.min(2.7,1.65+desc.length*0.008));
+}
+
+function renderAnimAt(pos){
+ const c=$('anim-canvas');
+ if(!c||!state.active)return;
+ const steps=getCompiled(state.active);
+ const len=steps.length;
+ if(!len)return;
+ const clamped=Math.max(0,Math.min(len-0.0001,pos));
+ state.animPos=clamped;
+ const idx=Math.min(len-1,Math.floor(clamped));
+ const frac=clamped-idx;
+ const st=steps[idx];
+ const ctx=c.getContext('2d');
+ OrigamiEngine.renderStepFrame(ctx,c.width,c.height,st,frac);
+
+ const title=st.title,desc=st.text;
+ const badge=$('anim-badge'),ttl=$('anim-step-title'),dsc=$('anim-step-desc'),bar=$('anim-progress'),scrub=$('anim-scrub'),toggle=$('anim-toggle');
+ if(badge)badge.textContent=`ШАГ ${idx+1} / ${len}`;
+ if(ttl)ttl.textContent=`${idx+1}. ${title}`;
+ if(dsc)dsc.textContent=desc;
+ const pct=(clamped/len)*100;
+ if(bar)bar.style.width=`${pct.toFixed(2)}%`;
+ if(scrub&&document.activeElement!==scrub)scrub.value=String(Math.round((clamped/len)*1000));
+ if(toggle)toggle.textContent=state.playing?'Пауза':'▶ Пуск';
+ const prevBtn=$('anim-prev'),nextBtn=$('anim-next');
+ if(prevBtn)prevBtn.disabled=idx===0&&frac<0.15;
+ if(nextBtn)nextBtn.disabled=idx>=len-1&&frac>0.92;
+}
+
+function startAnimLoop(){
+ if(state.raf)cancelAnimationFrame(state.raf);
+ state.playing=true;
+ state.lastTs=0;
+ const toggle=$('anim-toggle');
+ if(toggle)toggle.textContent='Пауза';
+ function loop(ts){
+  if(!state.playing||state.tab!=='video'||!$('anim-canvas')){state.raf=0;return;}
+  if(!state.lastTs)state.lastTs=ts;
+  const dt=Math.min(0.08,(ts-state.lastTs)/1000);
+  state.lastTs=ts;
+  const steps=getCompiled(state.active);
+  const len=steps.length;
+  const idx=Math.min(len-1,Math.floor(state.animPos));
+  const nextPos=state.animPos+(dt*state.speed)/stepDurationSec(steps[idx]);
+  if(nextPos>=len){
+   renderAnimAt(len-0.001);
+   state.playing=false;
+   state.raf=0;
+   if($('anim-toggle'))$('anim-toggle').textContent='▶ Повторить';
+   return;
+  }
+  renderAnimAt(nextPos);
+  state.raf=requestAnimationFrame(loop);
+ }
+ state.raf=requestAnimationFrame(loop);
+}
+
+function pauseAnimLoop(){
+ state.playing=false;
+ if(state.raf){cancelAnimationFrame(state.raf);state.raf=0;}
+ if($('anim-toggle'))$('anim-toggle').textContent='▶ Пуск';
+}
+
+function stepTo(index,focused){
+ const len=stepCount(state.active);
+ if(index<0||index>=len)return;
+ state.step=index;
+ refreshPane();
+ if(focused==='jump')$('jump')?.focus({preventScroll:true});
+ else if(focused){
+  const buttons=[...$('pane').querySelectorAll('[data-step]:not(:disabled)')];
+  (buttons.find(b=>b.dataset.step===focused)||buttons[0])?.focus({preventScroll:true});
+ }
+ const nav=$('pane').querySelector('.step-nav'),head=$('detail').querySelector('.modal-head');
+ if(nav&&nav.getBoundingClientRect().top<head.getBoundingClientRect().bottom){
+  $('detail').scrollTop+=nav.getBoundingClientRect().top-head.getBoundingClientRect().bottom-8;
+ }
+}
+
+function mountMp4(slot){
+ const p=state.active;
+ slot.innerHTML=`<video class="lesson-video" id="lesson-video" controls playsinline preload="metadata" aria-label="MP4-анимация складывания: ${escape(p.name)}"></video><div class="step-links" id="mp4-links"><a href="lessons/${p.id}.mp4" download="${p.id}-folding.mp4">Скачать MP4-файл ↓</a></div><p class="hint" id="mp4-fallback" hidden>В автономной копии из одного HTML-файла папка <code>lessons/</code> не подключена — полная 3D-анимация складывания работает прямо в плеере выше.</p>`;
+ const v=$('lesson-video');
+ v.addEventListener('error',()=>{if(!v.isConnected)return;v.hidden=true;$('mp4-links').hidden=true;$('mp4-fallback').hidden=false;},{once:true});
+ v.src=`lessons/${p.id}.mp4`;
+}
+
+function mountFootage(slot){
+ const p=state.active;
+ slot.innerHTML=`<p class="hint">${p.record?'Джон Коллинз показывает складывание «Сюзанны» (с 17:40).':'Авторская видеозапись складывания бумажной модели.'}</p><div class="step-links">${external(footageUrl(p),'Открыть на YouTube')}${external(p.video,'Страница автора')}</div><iframe class="video-footage" title="Видео складывания: ${escape(p.name)}" src="${escape(footageUrl(p,true))}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+}
+
+function refreshPane(){
+ stopAllAnim();
+ const p=state.active,steps=getCompiled(p),isSteps=state.tab==='steps';
+ $('steps-tab').setAttribute('aria-pressed',String(isSteps));
+ $('video-tab').setAttribute('aria-pressed',String(!isSteps));
+ if(isSteps&&steps.length){
+  const title=steps[state.step].title,description=steps[state.step].text;
+  $('pane').innerHTML=`<div class="step-nav"><button type="button" class="secondary" data-step="-1" ${state.step===0?'disabled':''}>← Назад</button><select class="step-jump" id="jump" aria-label="Перейти к шагу">${steps.map((_,i)=>`<option value="${i}" ${i===state.step?'selected':''}>Шаг ${i+1} / ${steps.length}</option>`).join('')}</select><button type="button" class="secondary" data-step="1" ${state.step===steps.length-1?'disabled':''}>Дальше →</button></div><figure class="diagram step-figure"><canvas id="step-canvas" width="900" height="580" role="img" aria-label="Чертёж шага ${state.step+1} из ${steps.length}: ${escape(title)}"></canvas></figure><div class="step-copy step-caption" aria-live="polite"><h3>${state.step+1}. ${escape(title)}</h3><p>${escape(description)}</p></div><div class="step-links"><button type="button" class="secondary mini-btn" id="replay-fold" data-replay-step="1">▶ Показать сгиб</button>${originalPhoto(p,state.step)}</div><p class="hint">Красный пунктир — сгиб на себя (долиной), синий штрихпунктир — от себя (горой), стрелка — направление движения части листа.</p>`;
+  paintStepStatic();
+ }else if(isSteps){
+  $('pane').innerHTML=`<p class="hint">Для этой модели не удалось загрузить схемы.</p>${external(p.source,'Открыть инструкцию','secondary')}`;
+ }else{
+  state.animPos=0;
+  $('pane').innerHTML=`<div class="anim-stage"><div class="anim-top"><span>БУМАЖНЫЙ АЭРОДРОМ · ${escape(p.name)}</span><span class="badge" id="anim-badge">ШАГ 1 / ${steps.length}</span></div><div class="anim-bar"><div id="anim-progress"></div></div><div class="anim-view"><canvas id="anim-canvas" width="960" height="500" role="img" aria-label="3D-анимация складывания по частям: ${escape(p.name)}"></canvas></div><div class="anim-caption" aria-live="polite"><h3 id="anim-step-title"></h3><p id="anim-step-desc"></p></div><div class="anim-controls"><button type="button" class="primary mini-btn" id="anim-toggle">Пауза</button><button type="button" class="secondary mini-btn" id="anim-prev" data-anim-nav="-1" aria-label="Предыдущий шаг">← Шаг</button><button type="button" class="secondary mini-btn" id="anim-next" data-anim-nav="1" aria-label="Следующий шаг">Шаг →</button><button type="button" class="secondary mini-btn" id="anim-restart">↺ Сначала</button><input type="range" class="anim-scrub" id="anim-scrub" min="0" max="1000" value="0" aria-label="Шкала анимации складывания"><select class="anim-speed" id="anim-speed" aria-label="Скорость анимации"><option value="0.6" ${state.speed===0.6?'selected':''}>0,6×</option><option value="1" ${state.speed===1?'selected':''}>1×</option><option value="1.5" ${state.speed===1.5?'selected':''}>1,5×</option></select></div></div><details class="offline-box" id="mp4-box"><summary>Видеофайл MP4 (24 кадра/с) — открыть в плеере или скачать</summary><div id="mp4-slot"></div></details><details class="offline-box" id="footage-box"><summary>Съёмка с живыми руками (авторское видео YouTube)</summary><div id="footage-slot"></div></details>`;
+  renderAnimAt(0);
+  startAnimLoop();
+  $('mp4-box').addEventListener('toggle',e=>{
+   const slot=$('mp4-slot');
+   if(!slot)return;
+   if(e.target.open){pauseAnimLoop();mountMp4(slot);}
+   else slot.replaceChildren();
+  });
+  $('footage-box').addEventListener('toggle',e=>{
+   const slot=$('footage-slot');
+   if(!slot)return;
+   if(e.target.open){pauseAnimLoop();mountFootage(slot);}
+   else slot.replaceChildren();
+  });
+ }
+}
+
+function openPlane(id){
+ const p=planes.find(x=>String(x.id)===String(id));if(!p)return;
+ state.active=p;state.tab='steps';state.step=0;
+ $('plane-label').textContent=serial(p);
+ $('plane-title').textContent=p.name;
+ $('plane-meta').textContent=[p.en!==p.name?p.en:'',typeLabel(p),p.cut?'Нужны ножницы':'Без ножниц',`Шагов: ${stepCount(p)}`].filter(Boolean).join(' · ');
+ $('plane-metrics').innerHTML=metrics(p)+(p.record?`<p class="modal-meta">Исторический бросок 2012 года: около ${p.recordTime} с по ${external(SUMAKE,'описанию Джона Коллинза')}. Скорость рассчитана только для этого броска. Сложность оценена редакционно.</p>`:p.duration?`<p class="modal-meta">В воздухе: ${format(p.duration)} с в среднем. ${p.speed!=null?'Скорость рассчитана, не измерена.':'Без дальности оценить скорость нельзя.'}</p>`:p.distance!=null?'<p class="modal-meta">Известна средняя дальность, но время полёта не опубликовано. Скорость рассчитать нельзя.</p>':'<p class="modal-meta">В источнике нет чисел для дальности и скорости этой модели.</p>')+flightTest();
+ $('credit').innerHTML=p.record?`Инструкции и замеры: ${external(SUMAKE,'Джон Коллинз · Make:')} · ${external(p.source,'WIRED')}.`:`Оригинал инструкции: ${external(p.source+'#instructions','Fold ’N Fly · фото сгибов')}.`;
+ refreshPane();
+ if(!$('detail').open)$('detail').showModal();
+ $('detail').scrollTop=0;
+}
+
+function changeFilters(){state.limit=12;render();}
+for(const id of ['difficulty','type','sort','local','nocut'])$(id).addEventListener('change',changeFilters);
+$('query').addEventListener('input',changeFilters);
+$('reset').addEventListener('click',()=>{for(const id of ['query','difficulty','type'])$(id).value='';$('sort').value='featured';$('local').checked=$('nocut').checked=false;changeFilters();});
+$('more').addEventListener('click',()=>{const previous=state.limit;state.limit+=12;render();$('cards').querySelectorAll('.open')[previous]?.focus({preventScroll:true});});
+$('cards').addEventListener('click',e=>{const b=e.target.closest('[data-plane]');if(b)openPlane(b.dataset.plane);});
+$('starter').addEventListener('click',()=>openPlane(1));
+$('steps-tab').addEventListener('click',()=>{if(state.tab!=='steps'){state.tab='steps';refreshPane();}});
+$('video-tab').addEventListener('click',()=>{if(state.tab!=='video'){state.tab='video';refreshPane();}});
+$('plane-metrics').addEventListener('input',e=>{if(e.target.matches('[data-flight]'))updateFlight();});
+
+$('pane').addEventListener('change',e=>{
+ if(e.target.id==='jump')stepTo(+e.target.value,'jump');
+ if(e.target.id==='anim-speed')state.speed=Number(e.target.value)||1;
+});
+$('pane').addEventListener('input',e=>{
+ if(e.target.id==='anim-scrub'&&state.active){
+  pauseAnimLoop();
+  const len=stepCount(state.active);
+  renderAnimAt((Number(e.target.value)/1000)*len);
+ }
+});
+$('pane').addEventListener('click',e=>{
+ const step=e.target.closest('[data-step]');
+ if(step)return stepTo(state.step+Number(step.dataset.step),step.dataset.step);
+ if(e.target.closest('[data-replay-step]'))return replayCurrentStep();
+ if(e.target.closest('#anim-toggle')){
+  if(state.playing)pauseAnimLoop();
+  else{
+   const len=stepCount(state.active);
+   if(state.animPos>=len-0.02)state.animPos=0;
+   startAnimLoop();
+  }
+  return;
+ }
+ if(e.target.closest('#anim-restart')){
+  state.animPos=0;
+  renderAnimAt(0);
+  startAnimLoop();
+  return;
+ }
+ const nav=e.target.closest('[data-anim-nav]');
+ if(nav&&state.active){
+  pauseAnimLoop();
+  const len=stepCount(state.active);
+  const curIdx=Math.floor(state.animPos);
+  const dir=Number(nav.dataset.animNav);
+  const target=dir<0?(state.animPos-curIdx>0.25?curIdx:Math.max(0,curIdx-1)):Math.min(len-1,curIdx+1);
+  renderAnimAt(target+0.48);
+ }
+});
+$('detail').addEventListener('keydown',e=>{
+ if(e.target.matches('input,select,textarea')||!['ArrowLeft','ArrowRight'].includes(e.key))return;
+ const dir=e.key==='ArrowRight'?1:-1;
+ if(state.tab==='steps'){e.preventDefault();stepTo(state.step+dir,String(dir));}
+ else if(state.tab==='video'&&state.active){
+  e.preventDefault();
+  pauseAnimLoop();
+  const len=stepCount(state.active);
+  const target=Math.max(0,Math.min(len-1,Math.floor(state.animPos)+dir));
+  renderAnimAt(target+0.48);
+ }
+});
+$('detail').addEventListener('close',()=>{stopAllAnim();$('pane').replaceChildren();});
+render();
+</script>
+</body>
+</html>
